@@ -4,7 +4,7 @@ const Importance = () => {
     return (
         <div className="py-16 px-4 bg-white text-center">
             {/* Title */}
-            <h2 className="text-[20px] md:text-3xl lg:text-[24px] font-semibold mb-8">
+            <h2 className="text-[20px] md:text-3xl lg:text-[24px] font-semibold mb-8 tracking-wide">
                 The Importance of Starting Early with DELE Escolares
             </h2>
 
