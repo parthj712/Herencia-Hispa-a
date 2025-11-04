@@ -33,12 +33,12 @@ export default function MainFAQ() {
     const [openIndex, setOpenIndex] = useState(null);
 
     return (
-        <div className="flex flex-col items-center text-center py-10 gap-4">
+        <div className="flex flex-col items-center text-center gap-4">
             <h2 className="text-2xl md:text-3xl font-semibold mb-10 tracking-wide">
                 FAQ for the DELE Exam
             </h2>
 
-            <div className="w-full max-w-6xl my-2 space-y-4">
+            <div className="w-full max-w-6xl my-2 space-y-4 px-8 md:px-12">
                 {faqs.map((faq, index) => (
                     <div
                         key={index}

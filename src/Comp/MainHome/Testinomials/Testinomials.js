@@ -8,18 +8,18 @@ const Testinomials = () => {
                 className="relative py-16 bg-gradient-to-l from-[#350D85] to-[#5D17EB] text-center text-white bg-cover bg-center"
                 style={{ backgroundImage: "url('/test_bg.png')" }} // place your bg image in public folder
             >
-                <div className="relative max-w-6xl mx-auto px-4 z-10 py-7">
+                <div className="relative max-w-6xl mx-auto px-4  z-10 py-7">
                     {/* Heading */}
                     {/* <h2 className="text-3xl md:text-4xl font-semibold mb-3">Testimonials</h2> */}
                     <h2 className="text-2xl md:text-3xl lg:text-3xl font-semibold mb-2 tracking-wide">
                         Testimonials
                     </h2>
-                    <p className="text-lg text-gray-200 mb-12">
-                        From 'Hola' to Fluent: Real Stories, Real Success.
+                    <p className="text-lg mb-12">
+                        From 'Hola' to Fluent : Real Stories, Real Success.
                     </p>
 
                     {/* Cards */}
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4 md:px-8 pb-6 md:pb-0">
                         {testimonialsData.map((test) => (
                             <div key={test.id} className="bg-gradient-to-b from-[#FCE39F] to-[#FDB900] rounded-b-2xl rounded-tr-2xl shadow-lg p-6 text-left text-black">
                                 <div className="flex items-center gap-4 mb-4">
