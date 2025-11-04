@@ -2,9 +2,9 @@ import React from 'react'
 
 const Connect500 = () => {
     return (
-        <div className="py-40">
+        <div className="py-20">
             <section
-                className="relative w-full h-[80vh] md:lg:h-[50vh] lg:h-[50vh] flex items-center justify-center bg-cover bg-center"
+                className="relative w-full h-[80vh] md:h-[50vh] lg:h-[50vh] flex items-center justify-center bg-cover bg-center"
                 style={{ backgroundImage: "url('/connect500.png')" }}
             >
 

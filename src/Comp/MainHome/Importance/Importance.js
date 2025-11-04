@@ -2,9 +2,9 @@ import React from 'react'
 
 const Importance = () => {
     return (
-        <div className="py-16 px-4 bg-white text-center">
+        <div className="py-16 px-8 md:px-12 lg:px-7  bg-white text-center">
             {/* Title */}
-            <h2 className="text-2xl md:text-3xl lg:text-3xl font-semibold mb-8 tracking-wide">
+            <h2 className="text-2xl md:text-2xl lg:text-3xl font-semibold mb-8 tracking-wide px-3 pb-6">
                 The Importance of Starting Early with DELE Escolares
             </h2>
 

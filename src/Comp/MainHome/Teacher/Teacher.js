@@ -29,7 +29,7 @@ const Teacher = () => {
                 Meet Our Instructor
             </p> */}
 
-<h2 className="text-[20px] md:text-3xl lg:text-[24px] font-semibold mb-8">
+            <h2 className="text-[20px] md:text-3xl lg:text-[24px] font-semibold mb-8">
                 Meet Our Instructor
             </h2>
 
@@ -37,7 +37,7 @@ const Teacher = () => {
 
             <Box
                 display={"flex"}
-                flexDirection={isMobile || isTablet ? "column": "row"}
+                flexDirection={isMobile || isTablet ? "column" : "row"}
                 alignItems="center"
                 gap={10}
             >
@@ -49,7 +49,7 @@ const Teacher = () => {
                     width={800} // large intrinsic width
                     height={800} // large intrinsic height
                     style={{
-                        width: isMobile ? "80%" : isTablet ? "60%" : "400px", // control responsiveness
+                        width: isMobile ? "90%" : isTablet ? "60%" : "400px", // control responsiveness
                         height: "auto",
                         objectFit: "cover",
 
@@ -60,7 +60,7 @@ const Teacher = () => {
 
                 {/* Text Section */}
                 <Box display={"flex"} flexDirection={"column"} alignItems={"center"} gap={2}>
-                    <p className="w-[320px] lg:w-[577px] text-center text-[16px] lg:text-[24px]">
+                    <p className="w-[320px] md:w-[600px] lg:w-[577px] text-center text-[18px] md:text-[20px] lg:text-[24px]">
                         "I founded this company because I believe learning Spanish should be
                         effective, engaging, and fast. As your instructor and the CEO, I
                         personally ensure that every feature from our AI pronunciation
@@ -76,7 +76,7 @@ const Teacher = () => {
                         </p>
 
                         <p
-                            className="text-center font-bold tracking-[1px]"
+                            className="text-center font-bold tracking-[1px] md:tracking-[0px]"
                         >
                             (Head Instructor & CEO)
                         </p>

@@ -2,9 +2,9 @@ import React from 'react'
 
 const WhyChoose = () => {
     return (
-        <div className="py-12 px-6 bg-white text-center">
+        <div className="py-12 px-8 md:px-12 bg-white text-center">
             {/* Title */}
-            <h2 className="text-2xl md:text-3xl font-semibold mb-10 tracking-wide">
+            <h2 className="text-2xl md:text-3xl font-semibold mb-10 tracking-normal md:tracking-wide leading-[30px] md:leading-[40px] lg:leading-[40px]">
                 Why Choose <span className="text-[#6B2EFF]">Herencia Hispana</span> <br />
                 for DELE Escolares Preparation
             </h2>
