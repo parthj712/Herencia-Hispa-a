@@ -22,13 +22,16 @@ const Teacher = () => {
             }}
         >
 
-            <p
+            {/* <p
                 className={`tracking-[1px] font-semibold mb-4 text-[1.5rem] text-shadow-sm ${isMobile ? "text-center" : "text-left"
                     }`}
             >
                 Meet Our Instructor
-            </p>
+            </p> */}
 
+<h2 className="text-[20px] md:text-3xl lg:text-[24px] font-semibold mb-8">
+                Meet Our Instructor
+            </h2>
 
 
 
