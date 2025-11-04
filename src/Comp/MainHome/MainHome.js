@@ -6,6 +6,7 @@ import Teacher from './Teacher/Teacher'
 import Importance from './Importance/Importance'
 import WhyChoose from './WhyChoose/WhyChoose'
 import Testinomials from './Testinomials/Testinomials'
+import MainFAQ from './FAQ/MainFAQ'
 
 const MainHome = () => {
     return (
@@ -17,6 +18,7 @@ const MainHome = () => {
             <Importance/>
             <WhyChoose/>
             <Testinomials/>
+            <MainFAQ/>
         </div>
     )
 }
