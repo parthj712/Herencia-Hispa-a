@@ -5,6 +5,7 @@ import Connect500 from './Connect500/Connect500'
 import Teacher from './Teacher/Teacher'
 import Importance from './Importance/Importance'
 import WhyChoose from './WhyChoose/WhyChoose'
+import Testinomials from './Testinomials/Testinomials'
 
 const MainHome = () => {
     return (
@@ -15,6 +16,7 @@ const MainHome = () => {
             <Teacher />
             <Importance/>
             <WhyChoose/>
+            <Testinomials/>
         </div>
     )
 }
