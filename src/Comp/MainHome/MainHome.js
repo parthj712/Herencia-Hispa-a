@@ -7,6 +7,7 @@ import Importance from './Importance/Importance'
 import WhyChoose from './WhyChoose/WhyChoose'
 import Testinomials from './Testinomials/Testinomials'
 import MainFAQ from './FAQ/MainFAQ'
+import Join from './Join/Join'
 
 const MainHome = () => {
     return (
@@ -19,6 +20,7 @@ const MainHome = () => {
             <WhyChoose/>
             <Testinomials/>
             <MainFAQ/>
+            <Join/>
         </div>
     )
 }

@@ -69,7 +69,7 @@ export default function MainFAQ() {
                 <p className="text-[20px]">Still have queries ? </p>
                 <a href="tel:+919623193036">
                     <button className="hover:cursor-pointer tracking-[0.5px] bg-gradient-to-l from-[#FDB900] to-[#FFD563] text-black font-semibold px-6 py-3 rounded-[10px] shadow-md hover:opacity-90 transition-all duration-300">
-                        Quick Call
+                        QUICK CALL
                     </button>
                 </a>
             </Box>
