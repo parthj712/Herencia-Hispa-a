@@ -85,7 +85,7 @@ const WhyChoose = () => {
                         variants={item}
                         whileHover={{ scale: 1.05 }}
                         transition={{ type: "spring", stiffness: 200, damping: 15 }}
-                        className="bg-gradient-to-l from-[#5D17EB] to-[#350D85] text-white rounded-xl p-6 shadow-md"
+                        className="hover:cursor-default bg-gradient-to-l from-[#5D17EB] to-[#350D85] text-white rounded-xl p-6 shadow-md"
                     >
                         <div className="flex flex-col items-center text-center">
                             <span className="text-yellow-400 text-3xl mb-3">

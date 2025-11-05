@@ -6,6 +6,7 @@ import Footer from "@/Comp/Footer/Footer";
 import FloatingContact from "@/Comp/FloatingContact/FloatingContact";
 import { motion, AnimatePresence } from "framer-motion";
 import PageWrapper from "@/Comp/PageWrapper/PageWrapper";
+import { MenuProvider } from "@/Comp/MenuProvider/MenuProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -39,10 +40,12 @@ export default function RootLayout({ children }) {
         className={`${poppins.className} antialiased`}
       >
         <PageWrapper>
-          <Navbar />
-          <main className="flex-grow">{children}</main>
-          <FloatingContact/>
-          <Footer />
+          <MenuProvider>
+            <Navbar />
+            <main className="flex-grow">{children}</main>
+            <FloatingContact />
+            <Footer />
+          </MenuProvider>
         </PageWrapper>
       </body>
     </html>

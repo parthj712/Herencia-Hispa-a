@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
-import { Box } from "@mui/material";
+import { Box, useMediaQuery, useTheme } from "@mui/material";
 import CommonFaq from "@/Comp/CommonFaq/CommonFaq";
 
 const faqs = [
@@ -36,6 +36,11 @@ const faqs = [
 export default function MainFAQ() {
     const [openIndex, setOpenIndex] = useState(null);
 
+
+    const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+    const isTablet = useMediaQuery(theme.breakpoints.between("sm", "md"));
+
     return (
         <div className="flex flex-col items-center text-center gap-4">
             {/* <h2 className="text-2xl md:text-3xl font-semibold mb-10 tracking-wide">
@@ -43,7 +48,7 @@ export default function MainFAQ() {
             </h2> */}
 
             {/* <div className="w-full max-w-6xl my-2 space-y-4 px-8 md:px-12"> */}
-                {/* {faqs.map((faq, index) => (
+            {/* {faqs.map((faq, index) => (
                     <motion.div
                         key={index}
                         layout
@@ -81,19 +86,19 @@ export default function MainFAQ() {
                         </AnimatePresence>
                     </motion.div>
                 ))} */}
-                <CommonFaq
-                    title="FAQ for the DELE Exam"
-                    faqItems={faqs}
-                    // backgroundImage="/accomodation-bg.png"
-                    bgColor="#5D17EB"
-                    titleColor="white"
-                    textColor="white"
-                />
+            <CommonFaq
+                title="FAQ for the DELE Exam"
+                faqItems={faqs}
+                // backgroundImage="/accomodation-bg.png"
+                bgColor="#5D17EB"
+                titleColor="white"
+                textColor="white"
+            />
             {/* </div> */}
 
             {/* Floating Animated Button */}
-            <Box display={"flex"} alignItems={"center"} gap={4}>
-                <p className="text-[20px]">Still have queries?</p>
+            <Box display={"flex"} flexDirection={isMobile ? "column" : "row"} alignItems={"center"} gap={isMobile ? 2 : 4}>
+                <p className="text-[22px] md:text-[20px] lg:text-[20px] font-semibold ">Still have queries?</p>
                 <motion.a
                     href="tel:+919623193036"
                     animate={{
