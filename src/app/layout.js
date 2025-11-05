@@ -2,7 +2,10 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { Poppins } from 'next/font/google'
 import "./globals.css";
 import Navbar from "@/Comp/MainNavbar/Navbar";
-import Footer from "@/Comp/MainHome/Footer/Footer";
+import Footer from "@/Comp/Footer/Footer";
+import FloatingContact from "@/Comp/FloatingContact/FloatingContact";
+import { motion, AnimatePresence } from "framer-motion";
+import PageWrapper from "@/Comp/PageWrapper/PageWrapper";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,9 +38,12 @@ export default function RootLayout({ children }) {
       <body
         className={`${poppins.className} antialiased`}
       >
-        <Navbar />
-        {children}
-        <Footer />
+        <PageWrapper>
+          <Navbar />
+          <main className="flex-grow">{children}</main>
+          <FloatingContact/>
+          <Footer />
+        </PageWrapper>
       </body>
     </html>
   );

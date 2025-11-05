@@ -19,19 +19,25 @@ export default function Footer() {
                     {/* Social Icons */}
                     <div className="flex space-x-4 mt-2">
                         <a
-                            href="#"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href="https://www.facebook.com/share/16jgS1if5W/?mibextid=wwXIfr"
                             className="bg-white p-2 rounded-full hover:scale-105 transition"
                         >
                             <img src="/fb.png" alt="Facebook" className="w-6 h-6 md:w-8 md:h-8" />
                         </a>
                         <a
-                            href="#"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href="https://www.instagram.com/herencia.hispana?igsh=MTM3M29rcmVxN2lwdA=="
                             className="bg-white p-2 rounded-full hover:scale-105 transition"
                         >
                             <img src="/insta.png" alt="Instagram" className="w-6 h-6 md:w-8 md:h-8" />
                         </a>
                         <a
-                            href="#"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href="https://www.linkedin.com/in/amey-prabhudesai-1711b5220?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
                             className="bg-white p-2 rounded-full hover:scale-105 transition"
                         >
                             <img src="/linkedin.png" alt="LinkedIn" className="w-6 h-6 md:w-8 md:h-8" />
@@ -45,20 +51,27 @@ export default function Footer() {
                     <div className="flex flex-col gap-6 items-start">
                         <p className="text-[18px] flex items-start justify-center md:justify-start gap-2">
                             <MapPin className="w-10 h-7 lg:w-10" />
-
                             202, A wing Shramasadhana apartments, Natuskar Lane, Markandi, Chiplun, 415605
-
                         </p>
-                        <p className="text-[18px] flex items-center justify-center md:justify-start gap-2">
+
+                        <a
+                            href="mailto:prabhudesaiamey95@gmail.com"
+                            className="text-[18px] flex items-center justify-center md:justify-start gap-2 hover:underline hover:text-blue-600 transition"
+                        >
                             <Mail className="w-5 h-5" />
                             prabhudesaiamey95@gmail.com
-                        </p>
-                        <p className="text-[18px] flex items-center justify-center md:justify-start gap-2">
+                        </a>
+
+                        <a
+                            href="tel:+918767010062"
+                            className="text-[18px] flex items-center justify-center md:justify-start gap-2 hover:underline hover:text-blue-600 transition"
+                        >
                             <Phone className="w-5 h-5" />
                             +91 8767010062
-                        </p>
+                        </a>
                     </div>
                 </div>
+
 
                 {/* Right Section - Quick Links */}
                 <div className="text-left md:text-left lg:text-right">
