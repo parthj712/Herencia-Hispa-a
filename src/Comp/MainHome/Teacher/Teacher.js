@@ -47,8 +47,8 @@ const Teacher = () => {
                 >
                     {/* Image Section */}
                     <motion.div
-                        initial={{ opacity: 0, x: -50 }}
-                        animate={isInView ? { opacity: 1, x: 0 } : {}}
+                        initial={{ opacity: 0, y: 50 }}
+                        animate={isInView ? { opacity: 1, y: 0 } : {}}
                         transition={{ duration: 1, ease: "easeOut" }}
                     >
                         <Image
@@ -66,8 +66,8 @@ const Teacher = () => {
 
                     {/* Text Section */}
                     <motion.div
-                        initial={{ opacity: 0, x: 50 }}
-                        animate={isInView ? { opacity: 1, x: 0 } : {}}
+                        initial={{ opacity: 0, y: 50 }}
+                        animate={isInView ? { opacity: 1, y: 0 } : {}}
                         transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
                     >
                         <Box display={"flex"} flexDirection={"column"} alignItems={"center"} gap={2}>

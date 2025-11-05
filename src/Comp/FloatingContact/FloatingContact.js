@@ -2,31 +2,26 @@
 import { Phone, Mail } from "lucide-react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useMenu } from "../MenuProvider/MenuProvider";
+
 
 const FloatingContact = () => {
-  // Floating up-down motion for continuous bounce
+  const { menuOpen } = useMenu(); // 👈 get menu state
+
+  if (menuOpen) return null; // ✅ hide when menu is open
+
   const floatAnimation = {
     y: [0, -10, 0],
-    transition: {
-      duration: 3,
-      ease: "easeInOut",
-      repeat: Infinity,
-    },
+    transition: { duration: 3, ease: "easeInOut", repeat: Infinity },
   };
 
-  // Appear from bottom smoothly when page loads
   const appearVariant = {
     hidden: { opacity: 0, y: 80, scale: 0.8 },
     visible: {
       opacity: 1,
       y: 0,
       scale: 1,
-      transition: {
-        type: "spring",
-        stiffness: 80,
-        damping: 14,
-        delay: 0.6, // Slight delay to look natural
-      },
+      transition: { type: "spring", stiffness: 80, damping: 14, delay: 0.6 },
     },
   };
 
@@ -37,22 +32,16 @@ const FloatingContact = () => {
       initial="hidden"
       animate="visible"
     >
-      {/* Phone Button */}
+      {/* Phone */}
       <motion.div
         animate={floatAnimation}
         whileHover={{ scale: 1.15, rotate: 10 }}
-        transition={{ type: "spring", stiffness: 200 }}
         className="relative group"
       >
-        {/* Animated Glow */}
         <motion.div
           className="absolute inset-0 rounded-full bg-yellow-400 blur-xl opacity-50"
           animate={{ opacity: [0.5, 0.8, 0.5], scale: [1, 1.2, 1] }}
-          transition={{
-            duration: 2,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
+          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
         />
         <Link
           href="tel:+91 8767010062"
@@ -62,22 +51,16 @@ const FloatingContact = () => {
         </Link>
       </motion.div>
 
-      {/* Mail Button */}
+      {/* Mail */}
       <motion.div
         animate={floatAnimation}
         whileHover={{ scale: 1.15, rotate: -10 }}
-        transition={{ type: "spring", stiffness: 200 }}
         className="relative group"
       >
-        {/* Animated Glow */}
         <motion.div
           className="absolute inset-0 rounded-full bg-yellow-400 blur-xl opacity-50"
           animate={{ opacity: [0.5, 0.8, 0.5], scale: [1, 1.2, 1] }}
-          transition={{
-            duration: 2,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
+          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
         />
         <Link
           href="mailto:prabhudesaiamey95@gmail.com"

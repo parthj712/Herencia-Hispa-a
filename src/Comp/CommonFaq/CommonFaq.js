@@ -19,7 +19,8 @@ const CommonFaq = ({
     textColor = "white",
 }) => {
     const theme = useTheme();
-    const isTablet = useMediaQuery(theme.breakpoints.down("md"));
+    const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+    const isTablet = useMediaQuery(theme.breakpoints.between("sm", "md"));
     const [expanded, setExpanded] = useState(false);
 
     const handleChange = (panel) => (event, newExpanded) => {
@@ -33,7 +34,7 @@ const CommonFaq = ({
                 flexDirection: "column",
                 justifyContent: "space-between",
                 mt: 8,
-                px: isTablet ? 6 : 16,
+                px: isMobile ? 4 : isTablet ? 6 : 16,
             }}
         >
             {/* Title */}

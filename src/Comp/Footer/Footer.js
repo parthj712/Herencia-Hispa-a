@@ -1,7 +1,19 @@
 import React from "react";
 import { MapPin, Mail, Phone } from "lucide-react";
+import Link from "next/link";
 
 export default function Footer() {
+
+    const navItems = [
+        { name: "Home", path: "/" },
+        { name: "About Us", path: "/about" },
+        { name: "Contact Us", path: "/contact" },
+        { name: "Blogs", path: "/blogs" },
+        { name: "What we offer", path: "/offer" },
+        { name: "Why Spanish", path: "/why-spanish" },
+    ];
+
+
     return (
         <footer className="bg-gradient-to-b from-[#FDB900] to-[#FFDC7C] text-black py-10 px-6 md:px-16">
             <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-20 items-center">
@@ -47,7 +59,7 @@ export default function Footer() {
 
                 {/* Middle Section - Contact Info */}
                 <div className="text-left md:text-left space-y-3">
-                    <h3 className="font-semibold text-lg">GET IN TOUCH</h3>
+                    <h3 className="font-bold text-xl">GET IN TOUCH</h3>
                     <div className="flex flex-col gap-6 items-start">
                         <p className="text-[18px] flex items-start justify-center md:justify-start gap-2">
                             <MapPin className="w-10 h-7 lg:w-10" />
@@ -75,14 +87,20 @@ export default function Footer() {
 
                 {/* Right Section - Quick Links */}
                 <div className="text-left md:text-left lg:text-right">
-                    <h3 className="font-semibold text-lg mb-3">Quick Links</h3>
+                    <h3 className="font-bold text-xl mb-3">Quick Links</h3>
                     <ul className="space-y-2">
-                        <li><a href="#" className="text-[18px] hover:underline">Home</a></li>
-                        <li><a href="#" className="text-[18px] hover:underline">About Us</a></li>
-                        <li><a href="#" className="text-[18px] hover:underline">Contact Us</a></li>
-                        <li><a href="#" className="text-[18px] hover:underline">Blogs</a></li>
-                        <li><a href="#" className="text-[18px] hover:underline">What We Offer</a></li>
-                        <li><a href="#" className="text-[18px] hover:underline">Why Spanish?</a></li>
+                        {navItems.map((item) => (
+                            <li key={item.name}>
+                                <Link
+                                    key={item.name}
+                                    href={item.path}
+                                    className="relative text-[18px] font-medium text-gray-900 hover:text-indigo-600 transition-colors duration-300 group"
+                                >
+                                    {item.name}
+                                    <span className="mt-1 absolute left-0 bottom-0 w-0 h-[2.5px] bg-indigo-600 rounded-full transition-all duration-300 group-hover:w-full"></span>
+                                </Link>
+                            </li>
+                        ))}
                     </ul>
                 </div>
             </div>

@@ -15,7 +15,7 @@ const Welcome = () => {
 
 
     return (
-        <div className='max-w-5xl md:max-w-2xl lg:max-w-7xl mx-auto px-4'>
+        <div className='max-w-5xl md:max-w-2xl lg:max-w-7xl mx-auto px-6 lg:px-4 md:px-4'>
             <Box display={"flex"} flexDirection={isMobile ? "column" : "row"} justifyContent={"space-between"} py={4}>
                 <p className='text-[34px] md:text-[24px] lg:text-[24px] font-semibold text-[#222222] pb-4 md:pb-0 lg:pb-0'>Hola! Start Speaking Spanish</p>
                 <Link
@@ -47,7 +47,7 @@ const Welcome = () => {
                         ></motion.div>
 
                         {/* Button Text */}
-                        <span className="relative z-10 tracking-[1px]">REGISTER NOW</span>
+                        <span className="relative z-10 tracking-[1px] text-[18px] lg:text-[18px] md:text-[18px]">REGISTER NOW</span>
                     </motion.button>
                 </Link>
             </Box>
