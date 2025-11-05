@@ -4,6 +4,7 @@
 import { Box, Button, Typography, useMediaQuery, useTheme } from '@mui/material'
 import Link from 'next/link' // Import Link if you're using Next.js
 import React from 'react'
+import { motion } from "framer-motion";
 
 const Welcome = () => {
 
@@ -22,9 +23,32 @@ const Welcome = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                 >
-                    <button className="hover:cursor-pointer tracking-[0px] xl:tracking-[1px] lg:tracking-[1px] bg-gradient-to-l from-[#FDB900] to-[#FFD563] text-black font-semibold px-6 py-3 md:py-2 lg:py-2 rounded-[10px] shadow-md hover:opacity-90 transition-all duration-300">
-                        REGISTER NOW
-                    </button>
+                    <motion.button
+                        className="relative overflow-hidden text-black font-semibold px-6 py-3 md:py-2 lg:py-2 rounded-[10px] shadow-md hover:opacity-90 transition-all duration-300"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                    >
+                        {/* Animated gradient background */}
+                        <motion.div
+                            className="absolute inset-0 z-0 rounded-[10px]"
+                            style={{
+                                background:
+                                    "linear-gradient(270deg, #FDB900, #FFD563, #FDB900)",
+                                backgroundSize: "300% 300%",
+                            }}
+                            animate={{
+                                backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+                            }}
+                            transition={{
+                                duration: 4,
+                                ease: "linear",
+                                repeat: Infinity,
+                            }}
+                        ></motion.div>
+
+                        {/* Button Text */}
+                        <span className="relative z-10 tracking-[1px]">REGISTER NOW</span>
+                    </motion.button>
                 </Link>
             </Box>
         </div>
