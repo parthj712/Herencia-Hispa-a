@@ -83,3 +83,26 @@ body {
   background-color: #ffffff;
   transform: scale(1.3);
 }
+
+
+/* Show dots only on mobile */
+.slick-dots {
+  bottom: -35px;
+}
+
+@media (max-width: 601px) {
+  .slick-dots {
+    display: none !important;
+  }
+}
+
+.slick-dots li button:before {
+  font-size: 10px;
+  color: white !important;
+  opacity: 0.5;
+}
+
+.slick-dots li.slick-active button:before {
+  color: #FDB900 !important;
+  opacity: 1;
+}
