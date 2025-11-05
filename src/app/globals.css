@@ -1,4 +1,8 @@
 @import "tailwindcss";
+/* slick-carousel default styles */
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+
 
 :root {
   --background: #ffffff !important;
@@ -65,4 +69,17 @@ body {
 
 .animate-slideUp {
   animation: slideUp 0.3s ease forwards;
+}
+
+
+.swiper-pagination-bullet {
+  opacity: 0.5;
+  background-color: #d1baff;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1;
+  background-color: #ffffff;
+  transform: scale(1.3);
 }
