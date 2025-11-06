@@ -2,6 +2,7 @@
 
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import Link from "next/link";
 
 const WhyChoose = () => {
     const ref = useRef(null);
@@ -68,7 +69,7 @@ const WhyChoose = () => {
                 transition={{ duration: 0.8, ease: "easeOut" }}
                 className="text-2xl md:text-3xl font-semibold mb-10 tracking-normal md:tracking-wide leading-[30px] md:leading-[40px] lg:leading-[40px]"
             >
-                Why Choose <span className="text-[#6B2EFF]">Herencia Hispana</span> <br />
+                Why Choose <br className="lg:hidden md:hidden"/> <span className="text-[#6B2EFF]">Herencia Hispana</span> <br className="hidden lg:block md:block"/>
                 for DELE Escolares Preparation
             </motion.h2>
 
@@ -99,6 +100,44 @@ const WhyChoose = () => {
                     </motion.div>
                 ))}
             </motion.div>
+
+
+            <Link
+                href="/course-brochure.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                download // ✅ tells browser to download instead of open
+            >
+                <motion.button
+                    className="mt-20 hover:cursor-pointer relative overflow-hidden text-black font-semibold px-6 py-3 md:py-2 lg:py-2 rounded-full shadow-md hover:opacity-90 transition-all duration-300"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                >
+                    {/* Animated gradient background */}
+                    <motion.div
+                        className="absolute inset-0 z-0 rounded-[10px]"
+                        style={{
+                            background:
+                                "linear-gradient(270deg, #FDB900, #FFD563, #FDB900)",
+                            backgroundSize: "300% 300%",
+                        }}
+                        animate={{
+                            backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+                        }}
+                        transition={{
+                            duration: 4,
+                            ease: "linear",
+                            repeat: Infinity,
+                        }}
+                    ></motion.div>
+
+                    {/* Button Text */}
+                    <span className="text-[16px] lg:text-[20px] md:text-[20px] relative z-10 tracking-[1px]">
+                        DOWNLOAD COURSE BROCHURE
+                    </span>
+                </motion.button>
+            </Link>
+
         </div>
     );
 };
