@@ -60,7 +60,6 @@ const Join = () => {
             >
                 <h2 className="text-2xl md:text-3xl font-semibold leading-snug mb-6 text-black">
                     Stop
-                    <br />
                     Dreaming.
                     <br />
                     Start Speaking.
@@ -95,7 +94,7 @@ const Join = () => {
                         ></motion.div>
 
                         {/* Button Text */}
-                        <span className="text-[20px] relative z-10 tracking-[1px]">
+                        <span className="text-[20px] lg:text-[20px] md:text-[18px] relative z-10 tracking-normal">
                             VAMOS! Join The Fluent Movement.
                         </span>
                     </motion.button>
