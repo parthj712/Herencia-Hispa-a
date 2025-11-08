@@ -132,7 +132,7 @@ const WhyChoose = () => {
                     ></motion.div>
 
                     {/* Button Text */}
-                    <span className="text-[16px] lg:text-[20px] md:text-[20px] relative z-10 tracking-[1px]">
+                    <span className="text-[16px] lg:text-[20px] md:text-[20px] relative z-10 tracking-[0.5px]">
                         DOWNLOAD COURSE BROCHURE
                     </span>
                 </motion.button>

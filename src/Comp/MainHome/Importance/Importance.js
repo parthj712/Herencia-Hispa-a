@@ -42,7 +42,7 @@ const Importance = () => {
                 variants={container}
                 initial="hidden"
                 animate={isInView ? "visible" : "hidden"}
-                className="grid grid-cols-1 sm:grid-cols-2 gap-10 max-w-7xl mx-auto"
+                className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-7xl mx-auto"
             >
                 {[
                     "Building a Strong Language Foundation",
@@ -55,7 +55,7 @@ const Importance = () => {
                     <motion.div
                         key={index}
                         variants={item}
-                        className="bg-[#5D17EB] text-[20px] sm:text-[18px] text-white font-semibold py-6 px-6 rounded-md shadow-md"
+                        className="bg-[#5D17EB] text-[20px] sm:text-[20px] text-white font-semibold py-6 px-6 rounded-md shadow-md"
                     >
                         {text}
                     </motion.div>

@@ -21,7 +21,10 @@ const CommonFaq = ({
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
     const isTablet = useMediaQuery(theme.breakpoints.between("sm", "md"));
-    const [expanded, setExpanded] = useState(false);
+    // const [expanded, setExpanded] = useState(false);
+
+     // 👇 Default open: first panel (panel0)
+    const [expanded, setExpanded] = useState("panel0");
 
     const handleChange = (panel) => (event, newExpanded) => {
         setExpanded(newExpanded ? panel : false);

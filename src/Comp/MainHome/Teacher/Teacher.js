@@ -71,13 +71,29 @@ const Teacher = () => {
                         transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
                     >
                         <Box display={"flex"} flexDirection={"column"} alignItems={"center"} gap={2}>
-                            <p className="w-[320px] md:w-[600px] lg:w-[577px] text-center text-[18px] md:text-[20px] lg:text-[24px]">
-                                "I founded this company because I believe learning Spanish should be
-                                effective, engaging, and fast. As your instructor and the CEO, I personally
-                                ensure that every feature — from our AI pronunciation feedback to our full
-                                DELE exam preparation — is the best in the world. You are not just a student
-                                here; you are our focus. Let’s make you fluent."
-                            </p>
+                            <div className="relative w-[320px] md:w-[600px] lg:w-[600px] text-center text-[18px] md:text-[20px] lg:text-[22px] leading-relaxed">
+                                {/* Opening Quote (behind text, semi-transparent) */}
+                                <span className="absolute left-10 -top-8 text-yellow-400 text-[108px] font-bold opacity-30">
+                                    “
+                                </span>
+
+                                <p className="relative z-10 text-gray-900">
+                                    I founded this company because I believe <strong>learning Spanish online</strong> should be
+                                    effective, engaging, and fast. As your instructor and the CEO, I personally ensure that every
+                                    feature—from our <strong>AI pronunciation feedback</strong> to our <strong>DELE exam preparation</strong>—matches
+                                    the highest standards. Our <strong>online Spanish classes in India</strong> are designed by the
+                                    <strong> best Spanish teachers</strong> to help you master grammar, speaking, and real-world conversation
+                                    skills quickly and confidently. You’re not just a student here; you’re the center of our mission
+                                    to make <strong>Spanish learning in India</strong> affordable, accessible, and truly world-class.
+                                </p>
+
+                                {/* Closing Quote (behind text, semi-transparent) */}
+                                <span className="absolute right-10 -bottom-8 text-yellow-400 text-[108px] font-bold opacity-30">
+                                    ”
+                                </span>
+                            </div>
+
+
                             <Box>
                                 <p className="text-center font-bold text-[20px] lg:text-[24px] tracking-[1px]">
                                     Mr. Amey Prabhudesai
