@@ -89,7 +89,7 @@ const Connect500 = () => {
                 </section>
 
                 {/* Right Side - Form */}
-                <div className="w-full lg:w-1/2 mt-10 lg:mt-0 bg-white p-8 rounded-none lg:rounded-2xl md:rounded-none shadow-lg">
+                <div className="w-full lg:w-[680px] bg-white p-8 rounded-none lg:rounded-2xl md:rounded-none shadow-lg">
                     <h2 className="text-2xl font-semibold mb-6">
                         Download the Free Module
                     </h2>
@@ -97,6 +97,7 @@ const Connect500 = () => {
                     <form onSubmit={handleSubmit}>
                         {/* Email Input */}
                         <div className="mb-4">
+                            
                             <input
                                 type="email"
                                 value={email}
