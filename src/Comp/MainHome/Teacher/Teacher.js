@@ -80,11 +80,11 @@ const Teacher = () => {
                                 <p className="relative z-10 text-gray-900">
                                     I founded this company because I believe <strong>learning Spanish online</strong> should be
                                     effective, engaging, and fast. As your instructor and the CEO, I personally ensure that every
-                                    feature—from our <strong>AI pronunciation feedback</strong> to our <strong>DELE exam preparation</strong>—matches
+                                    feature from our <strong>AI pronunciation feedback</strong> to our <strong>DELE exam preparation</strong> matches
                                     the highest standards. Our <strong>online Spanish classes in India</strong> are designed by the
                                     <strong> best Spanish teachers</strong> to help you master grammar, speaking, and real-world conversation
                                     skills quickly and confidently. You’re not just a student here; you’re the center of our mission
-                                    to make <strong>Spanish learning in India</strong> affordable, accessible, and truly world-class.
+                                    to make <strong>Spanish learning in India</strong> affordable, accessible, and truly world class.
                                 </p>
 
                                 {/* Closing Quote (behind text, semi-transparent) */}

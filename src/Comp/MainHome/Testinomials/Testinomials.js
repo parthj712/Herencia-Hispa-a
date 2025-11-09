@@ -78,7 +78,7 @@ const Testimonials = () => {
                     </motion.p>
 
                     {/* Slider */}
-                    <div className="relative py-7">
+                    <div className="relative pt-7">
                         {/* Custom arrows (desktop only) */}
                         <button
                             className="absolute -left-10 top-1/2 transform -translate-y-1/2 hidden lg:flex items-center justify-center w-10 h-10 rounded-full bg-white/20 hover:bg-white/40 transition"
@@ -110,8 +110,8 @@ const Testimonials = () => {
                                     <div className="py-16 lg:py-0 md:py-0 relative rounded-b-2xl rounded-tr-2xl p-0 lg:p-6 md:p-6 text-left text-black">
                                         {/* Opening Quote */}
 
-                                        <div className="px-16 flex flex-col items-center">
-                                            <div className="flex items-center gap-4 mb-4">
+                                        <div className="px-8 lg:px-16 md:px-16 flex flex-col items-center">
+                                            <div className="flex items-center gap-4">
                                                 <div>
                                                     <h4 className="text-[#FDB900] font-semibold text-[26px] lg:text-3xl md:text-2xl text-center">{test.name}</h4>
                                                     <p className="text-white  text-[16px] lg:text-[18px] md:text-[16px] text-center">
@@ -120,7 +120,9 @@ const Testimonials = () => {
                                                 </div>
                                             </div>
 
-                                            <p className="text-white text-center leading-relaxed text-[18px] lg:text-[18px] relative z-10">
+                                            <span className="text-[22px] text-[#FDB900] shadow-2xl">•</span>
+
+                                            <p className="text-white text-center leading-relaxed text-[20px] lg:text-[18px] relative z-10">
                                                 {test.feedback}
                                             </p>
                                         </div>
@@ -132,12 +134,12 @@ const Testimonials = () => {
                             ))}
                         </Slider>
                         {/* Closing Quote */}
-                        <span className="absolute right-6 -bottom-10 lg:-bottom-26 md:-bottom-26 text-[#FDB900] text-[108px] font-bold -z-10 opacity-90">
+                        <span className="absolute right-6 -bottom-4 lg:-bottom-26 md:-bottom-26 text-[#FDB900] text-[108px] font-bold -z-10 opacity-90">
                             ”
                         </span>
                     </div>
 
-                    <p className="lg:hidden md:hidden text-[16px] pt-9">Swipe to see more</p>
+                    <p className="lg:hidden md:hidden text-[16px] pt-0 lg:pt-9 md:pt-9">Swipe to see more</p>
                 </div>
             </section>
         </motion.div>
