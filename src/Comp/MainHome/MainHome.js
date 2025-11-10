@@ -8,6 +8,7 @@ import WhyChoose from './WhyChoose/WhyChoose'
 import Testinomials from './Testinomials/Testinomials'
 import MainFAQ from './FAQ/MainFAQ'
 import Join from './Join/Join'
+import RunningText from './RunningText/RunningText'
 
 const MainHome = () => {
     return (
@@ -15,6 +16,7 @@ const MainHome = () => {
             <Welcome />
             <HeroSection />
             <Connect500 />
+            <RunningText />
             <Teacher />
             <Importance/>
             <WhyChoose/>

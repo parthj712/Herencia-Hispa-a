@@ -106,3 +106,20 @@ body {
   color: #FDB900 !important;
   opacity: 1;
 }
+
+
+
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee var(--speed, 18s) linear infinite;
+}
