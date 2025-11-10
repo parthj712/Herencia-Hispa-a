@@ -7,6 +7,7 @@ import FloatingContact from "@/Comp/FloatingContact/FloatingContact";
 import { motion, AnimatePresence } from "framer-motion";
 import PageWrapper from "@/Comp/PageWrapper/PageWrapper";
 import { MenuProvider } from "@/Comp/MenuProvider/MenuProvider";
+import PopupAd from "@/Comp/PopupAd/PopupAd";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,7 +28,7 @@ export const metadata = {
 };
 
 const poppins = Poppins({
-  subsets: ['latin'], 
+  subsets: ['latin'],
   weight: ['400', '500', '600', '700'], // choose the weights you want
   variable: '--font-poppins', // optional CSS variable
 })
@@ -39,6 +40,14 @@ export default function RootLayout({ children }) {
       <body
         className={`${poppins.className} antialiased`}
       >
+
+         <PopupAd
+          img="/Ad1.jpeg"
+          link="https://example.com"
+          countdownStart={5}
+        />
+
+
         <PageWrapper>
           <MenuProvider>
             <Navbar />
@@ -47,6 +56,9 @@ export default function RootLayout({ children }) {
             <Footer />
           </MenuProvider>
         </PageWrapper>
+
+
+       
       </body>
     </html>
   );
