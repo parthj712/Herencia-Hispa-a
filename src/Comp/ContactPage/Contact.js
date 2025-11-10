@@ -81,7 +81,7 @@ const Contact = () => {
             <div className="flex flex-col items-center justify-center py-12">
                 {/* Title Bar */}
                 <Box
-                    className="w-full px-10 lg:px-30 md:px-14 py-4 text-white font-semibold text-lg mb-10"
+                    className="w-full px-10 lg:px-36 md:px-14 py-4 text-white font-semibold text-lg mb-10"
                     sx={{
                         background: "linear-gradient(90deg, #3b0ca3 0%, #7026e2 100%)",
                     }}
@@ -89,7 +89,7 @@ const Contact = () => {
                     <p className="text-white">Contact Us</p>
                 </Box>
 
-                <div className="px-8 lg:px-0 md:px-0 w-full max-w-4xl lg:max-w-7xl md:max-w-2xl flex flex-col lg:flex-row md:flex-col items-center gap-4 lg:gap-16 md:gap-10">
+                <div className="px-8 lg:px-4 md:px-0 w-full max-w-4xl lg:max-w-7xl md:max-w-2xl flex flex-col lg:flex-row md:flex-col items-center gap-4 lg:gap-16 md:gap-10">
                     {/* Info Cards */}
                     <Box display={"flex"} flexDirection={isTablet ? "row" : "column"} gap={isMobile ? 2 : isTablet ? 4 : 6} alignItems={"center"} className="w-full lg:w-[1000px] md:w-[670px]">
                         <Card onClick={() => (window.location.href = "mailto:prabhudesaiamey95@gmail.com")} className="shadow-md rounded-xl bg-gray-50 h-full flex w-full hover:cursor-pointer">
