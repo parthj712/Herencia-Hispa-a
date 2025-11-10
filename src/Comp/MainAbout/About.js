@@ -61,14 +61,14 @@ const About = () => {
                         <Box display={"flex"} flexDirection={"column"} width={"inherit"} py={isMobile ? 10 : isTablet ? 10 : 8}>
                             <p className='text-[20px] lg:text-[24px] md:text-[22px]  font-semibold text-center'>Meet Our Founder & Your Instructor</p>
 
-                            <Box className="flex flex-col lg:flex-row md:flex-col w-full px-5 lg:px-0 md:px-5 py-16 items-center justify-center gap-7">
+                            <Box className="flex flex-col lg:flex-row md:flex-col w-full px-5 lg:px-0 md:px-5 py-16 items-center justify-center">
                                 {/* <motion.div
                                     initial={{ opacity: 0, y: 50 }}
                                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                                     transition={{ duration: 1, ease: "easeOut" }}
                                 > */}
                                 <Image
-                                    className='w-1/2'
+                                    className='w-1/2 rounded-tl-2xl rounded-bl-2xl'
                                     src="/teacher.JPG"
                                     alt="Instructor"
                                     width={800}
@@ -168,7 +168,7 @@ const About = () => {
                                         ></motion.div>
 
                                         {/* Button Text */}
-                                        <span className=" text-center relative z-10 tracking-[0.5px] text-[18px] lg:text-[22px] md:text-[18px]">Enroll Now & Start Speaking</span>
+                                        <span className=" text-center relative z-10 text-[18px] lg:text-[22px] md:text-[18px]">Enroll Now & Start Speaking</span>
                                     </motion.button>
                                 </Link>
                             </div>
@@ -179,9 +179,6 @@ const About = () => {
                         </Box>
 
                     </div>
-
-
-
 
                 </div>
             </Box>
