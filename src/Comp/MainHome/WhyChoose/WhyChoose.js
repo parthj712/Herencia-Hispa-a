@@ -69,7 +69,7 @@ const WhyChoose = () => {
                 transition={{ duration: 0.8, ease: "easeOut" }}
                 className="text-2xl md:text-3xl font-semibold mb-10 tracking-normal md:tracking-wide leading-[30px] md:leading-[40px] lg:leading-[40px]"
             >
-                Why Choose <br className="lg:hidden md:hidden"/> <span className="text-[#6B2EFF]">Herencia Hispana</span> <br className="hidden lg:block md:block"/>
+                Why Choose <br className="lg:hidden md:hidden" /> <span className="text-[#6B2EFF]">Herencia Hispaña</span> <br className="hidden lg:block md:block" />
                 for DELE Escolares Preparation
             </motion.h2>
 
@@ -86,8 +86,17 @@ const WhyChoose = () => {
                         variants={item}
                         whileHover={{ scale: 1.05 }}
                         transition={{ type: "spring", stiffness: 200, damping: 15 }}
-                        className="hover:cursor-default bg-gradient-to-l from-[#5D17EB] to-[#350D85] text-white rounded-xl p-6 shadow-md"
+                        className="
+    hover:cursor-default
+    text-white
+    rounded-xl
+    p-6
+    shadow-md
+    animate-gradient-diagonal
+    bg-[linear-gradient(135deg,#5D17EB,#5321C8,#350D85)]
+  "
                     >
+
                         <div className="flex flex-col items-center text-center">
                             <span className="text-yellow-400 text-3xl mb-3">
                                 {itemData.emoji}

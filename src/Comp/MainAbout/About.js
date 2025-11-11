@@ -31,12 +31,12 @@ const About = () => {
 
                     <div className="px-8 lg:px-4 md:px-0 w-full max-w-4xl lg:max-w-7xl md:max-w-2xl flex flex-col items-center">
 
-                        <Box display={"flex"} flexDirection={"column"} gap={2} py={isMobile ? 10 : isTablet ? 10 : 8}>
+                        <Box display={"flex"} flexDirection={"column"} gap={2} py={isMobile ? 4 : isTablet ? 6 : 8}>
                             <p className='text-[20px] lg:text-[24px] md:text-[22px] font-semibold text-center'>A New Standard for Spanish Education </p>
                             <p className='text-[17px] lg:text-[22px] md:text-[18px] text-center'>Welcome to Herencia Hispaña where professional certification meets cultural passion. We are not just a coaching center; we are a specialized institute dedicated to transforming students into confident, certified Spanish speakers.</p>
                         </Box>
 
-                        <Box display={"flex"} flexDirection={"column"} py={isMobile ? 10 : isTablet ? 10 : 8}>
+                        <Box display={"flex"} flexDirection={"column"} py={isMobile ? 6 : isTablet ? 6 : 8}>
                             <Box
                                 className="w-full px-5 lg:px-5 md:px-5 py-4 text-white font-semibold text-lg bg-gradient-to-r from-[#350D85] to-[#5D17EB]"
                             >
@@ -45,20 +45,20 @@ const About = () => {
                                 </p>
                             </Box>
 
-                            <Box className="flex flex-col gap-3 w-full px-5 lg:px-5 md:px-5 py-4">
+                            <Box className="flex flex-col gap-3 w-full pl-5 lg:pl-5 md:pl-5 py-4">
                                 <Box display={"flex"} flexDirection={"column"}>
                                     <p className='text-[18px] lg:text-[20px] md:text-[18px] font-semibold py-1'>Our Mission</p>
-                                    <p className='text-[16px] lg:text-[18px] md:text-[17px]'>Our mission is to help people confidently learn new languages, connect with others, and open doors to new opportunities. We believe language is not just about words it’s about building bridges and understanding different cultures.</p>
+                                    <p className='text-[17px] lg:text-[18px] md:text-[17px]'>Our mission is to help people confidently learn new languages, connect with others, and open doors to new opportunities. We believe language is not just about words it’s about building bridges and understanding different cultures.</p>
                                 </Box>
 
                                 <Box display={"flex"} flexDirection={"column"}>
                                     <p className='text-[18px]lg:text-[20px] md:text-[18px] font-semibold py-1'>Our Vision</p>
-                                    <p className='text-[16px] lg:text-[18px] md:text-[17px]'>We dream of a world where language brings people closer, breaks down barriers, and creates lasting connections. Through fun, supportive, and practical learning experiences, we want to empower everyone to embrace diversity and feel at home anywhere in the world.</p>
+                                    <p className='text-[17px] lg:text-[18px] md:text-[17px]'>We dream of a world where language brings people closer, breaks down barriers, and creates lasting connections. Through fun, supportive, and practical learning experiences, we want to empower everyone to embrace diversity and feel at home anywhere in the world.</p>
                                 </Box>
                             </Box>
                         </Box>
 
-                        <Box display={"flex"} flexDirection={"column"} width={"inherit"} py={isMobile ? 10 : isTablet ? 10 : 8}>
+                        <Box display={"flex"} flexDirection={"column"} width={"inherit"} py={isMobile ? 4 : isTablet ? 4 : 8}>
                             <p className='text-[20px] lg:text-[24px] md:text-[22px]  font-semibold text-center'>Meet Our Founder & Your Instructor</p>
 
                             <Box className="flex flex-col lg:flex-row md:flex-col w-full px-5 lg:px-0 md:px-5 py-16 items-center justify-center">
@@ -68,7 +68,7 @@ const About = () => {
                                     transition={{ duration: 1, ease: "easeOut" }}
                                 > */}
                                 <Image
-                                    className='w-1/2 rounded-tl-2xl rounded-bl-2xl'
+                                    className='w-1/2 rounded-tl-2xl rounded-tr-2xl lg:rounded-tl-2xl lg:rounded-bl-2xl md:rounded-tl-2xl md:rounded-tr-2xl'
                                     src="/teacher.JPG"
                                     alt="Instructor"
                                     width={800}
@@ -110,7 +110,7 @@ const About = () => {
                             display="flex"
                             flexDirection="column"
                             gap={6}
-                            py={isMobile ? 10 : isTablet ? 10 : 8}
+                            py={isMobile ? 4 : isTablet ? 4 : 8}
                         >
 
                             <p className=' w-full text-[20px] lg:text-[24px] md:text-[22px]  font-semibold text-center'>Our Core Philosophy</p>

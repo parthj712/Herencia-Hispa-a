@@ -8,8 +8,7 @@ const RunningText = () => {
         { text: "Live Online Class", emoji: "🎥" },
         { text: "DELE Certification Prep", emoji: "📘" },
         { text: "Free Study Materials", emoji: "📚" },
-        { text: "500+ Students Trained", emoji: "👥" },
-        { text: "Expert Native-Level Trainer", emoji: "🎓" },
+        { text: "5+ Experience Teacher", emoji: "🎓" },
     ];
 
     const [speed, setSpeed] = useState("14s");
@@ -34,35 +33,30 @@ const RunningText = () => {
         <div className="py-6 relative">
 
             {/* Fade Left */}
-            <div className="pointer-events-none absolute left-0 top-0 h-full w-12 
+            <div className="pointer-events-none absolute left-0 top-0 h-full w-20
                       bg-gradient-to-r from-[#fffaf3] to-transparent z-[5]" />
 
             {/* Fade Right */}
-            <div className="pointer-events-none absolute right-0 top-0 h-full w-12 
+            <div className="pointer-events-none absolute right-0 top-0 h-full w-20
                       bg-gradient-to-l from-[#fffaf3] to-transparent z-[5]" />
 
             <div
                 className="
-          overflow-hidden whitespace-nowrap py-2 
+          overflow-hidden whitespace-nowrap py-3 
           bg-[#fffaf3] 
-          border-y border-purple-200 relative
+           relative
         "
                 style={{ "--speed": speed }}
             >
-                <div className="animate-marquee flex gap-8">
+                <div className="animate-marquee flex gap-20">
 
                     {items.map((item, i) => (
                         <span key={i} className="flex items-center gap-2">
                             <span className="text-[15px]">{item.emoji}</span>
 
                             <span
-                                className="w-2 h-2 rounded-full 
-                bg-gradient-to-r from-[#5D17EB] to-[#350D85]"
-                            ></span>
-
-                            <span
                                 className="
-                  text-[15px] font-semibold
+                  text-[18px] font-semibold
                   bg-gradient-to-r from-[#5D17EB] to-[#350D85]
                   bg-clip-text text-transparent
                 "
@@ -78,13 +72,8 @@ const RunningText = () => {
                             <span className="text-[15px]">{item.emoji}</span>
 
                             <span
-                                className="w-2 h-2 rounded-full 
-                bg-gradient-to-r from-[#5D17EB] to-[#350D85]"
-                            ></span>
-
-                            <span
                                 className="
-                  text-[15px] font-semibold
+                  text-[18px] font-semibold
                   bg-gradient-to-r from-[#5D17EB] to-[#350D85]
                   bg-clip-text text-transparent
                 "

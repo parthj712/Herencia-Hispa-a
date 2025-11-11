@@ -23,29 +23,38 @@ const Testimonials = () => {
     };
 
     const settings = {
-        dots: false,
-        infinite: true,
-        speed: 900,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: false,
-        responsive: [
-            {
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 1,
-                    dots: true,
-                },
+    dots: false,
+    infinite: true,
+    speed: 900,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+
+    autoplay: true,          // ✅ Auto scroll
+    autoplaySpeed: 3500,     // ✅ Adjust speed (in ms)
+
+    responsive: [
+        {
+            breakpoint: 1024,
+            settings: {
+                slidesToShow: 1,
+                dots: true,
+                autoplay: true,          // ✅ also ensure autoplay works on tab/mobile
+                autoplaySpeed: 3500,
             },
-            {
-                breakpoint: 600,
-                settings: {
-                    slidesToShow: 1,
-                    dots: true,
-                },
+        },
+        {
+            breakpoint: 600,
+            settings: {
+                slidesToShow: 1,
+                dots: true,
+                autoplay: true,
+                autoplaySpeed: 3500,
             },
-        ],
-    };
+        },
+    ],
+};
+
 
     // ✅ Only render slider after mount (ensures correct breakpoint)
     if (!mounted) return null;

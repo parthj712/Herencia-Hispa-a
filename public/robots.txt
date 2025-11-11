@@ -1,0 +1,6 @@
+
+User-agent: *
+Allow: /
+
+Sitemap: https://www.xn--herenciahispaa-2nb.com/sitemap.xml
+
