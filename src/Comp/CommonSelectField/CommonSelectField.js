@@ -72,10 +72,11 @@ const CommonSelectField = ({
             }}
         >
             {options.map((opt, index) => (
-                <MenuItem key={index} value={opt}>
-                    {opt}
+                <MenuItem key={index} value={opt.value || opt}>
+                    {opt.label || opt}
                 </MenuItem>
             ))}
+
         </TextField>
     );
 };

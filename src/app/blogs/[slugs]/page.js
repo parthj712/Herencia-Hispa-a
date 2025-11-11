@@ -5,7 +5,7 @@ import { Box } from "@mui/material";
 export default function BlogDetails({ params }) {
     const { slug } = params;
 
-    const blog = blogData.find((b) => b.slug === slug);
+    const blog = blogData.find((b) => b.slugs === slug);
 
     if (!blog) {
         return <p className="text-center py-20 text-xl">Blog not found!</p>;

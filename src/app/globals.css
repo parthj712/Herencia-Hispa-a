@@ -123,3 +123,41 @@ body {
 .animate-marquee {
   animation: marquee var(--speed, 18s) linear infinite;
 }
+
+
+
+/* why choose gradient */
+
+/* Moving Gradient Animation */
+@keyframes gradientMoveDiagonal {
+  0% {
+    background-position: 0% 0%;
+  }
+
+  50% {
+    background-position: 100% 100%;
+  }
+
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+.animate-gradient-diagonal {
+  background-size: 300% 300%;
+  animation: gradientMoveDiagonal 6s ease infinite;
+}
+
+
+
+
+/* freebies download animation */
+
+.success-popup {
+  animation: popupFade 0.4s ease-out forwards;
+}
+
+@keyframes popupFade {
+  0% { transform: scale(0.8); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
