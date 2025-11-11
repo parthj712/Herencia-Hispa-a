@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import { Country } from "country-state-city";
 
@@ -9,43 +9,51 @@ const Connect500 = () => {
 
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
-    const [country, setCountry] = useState("");
+    const [country, setCountry] = useState("91"); // default India
     const [errors, setErrors] = useState({ email: "", phone: "" });
 
-    const [successPopup, setSuccessPopup] = useState(false);
     const countryCodes = Country.getAllCountries();
 
-    // ✅ Auto-detect user country code based on IP
-    useEffect(() => {
-        fetch("https://ipapi.co/json/")
-            .then((r) => r.json())
-            .then((data) => {
-                if (data.country_calling_code) {
-                    setCountry(data.country_calling_code.replace("+", ""));
-                } else {
-                    setCountry("91"); // default fallback
-                }
-            })
-            .catch(() => setCountry("91"));
-    }, []);
+    // ✅ COUNTRY-WISE PHONE VALIDATION
+    const validatePhoneByCountry = (countryCode, phoneNumber) => {
+        switch (countryCode) {
+            case "91": 
+                return /^[6-9]\d{9}$/.test(phoneNumber);
 
+            case "1": 
+                return /^[2-9]\d{2}[2-9]\d{6}$/.test(phoneNumber);
+
+            case "34":
+                return /^[6-7]\d{8}$/.test(phoneNumber);
+
+            case "52":
+                return /^\d{10}$/.test(phoneNumber);
+
+            default:
+                return /^\d{6,15}$/.test(phoneNumber);
+        }
+    };
+
+    // ✅ FULL VALIDATION
     const validate = () => {
         let valid = true;
-        let newErrors = { email: "", phone: "" };
+        const newErrors = { email: "", phone: "" };
 
+        // Email validation
         if (!email.trim()) {
             newErrors.email = "Email is required";
             valid = false;
         } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-            newErrors.email = "Enter a valid email";
+            newErrors.email = "Enter a valid email address";
             valid = false;
         }
 
+        // Phone validation (based on selected country)
         if (!phone.trim()) {
             newErrors.phone = "Phone number is required";
             valid = false;
-        } else if (!/^\d{7,12}$/.test(phone)) {
-            newErrors.phone = "Enter a valid phone number";
+        } else if (!validatePhoneByCountry(country, phone)) {
+            newErrors.phone = "Invalid phone number for selected country";
             valid = false;
         }
 
@@ -55,49 +63,18 @@ const Connect500 = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
         if (validate()) {
-            // ✅ Show success popup
-            setSuccessPopup(true);
-            setTimeout(() => setSuccessPopup(false), 2500);
+            window.open("https://forms.gle/xJjxwJgZmxmixHbN8", "_blank");
 
-            // ✅ Open Google Form
-            // window.open("https://forms.gle/xJjxwJgZmxmixHbN8", "_blank");
-
-            // ✅ Auto-download free module
             const link = document.createElement("a");
-            link.href = "/Herencia Hispaña Course Brochure.pdf";
-            link.download = "Herencia Hispaña Course Brochure.pdf";
+            link.href = "/Free_Module.pdf";
+            link.download = "Spanish_Free_Module.pdf";
             link.click();
-
-            // ✅ Send WhatsApp message automatically
-            //             const whatsappMessage = `
-            // ✅ *New Module Request*
-
-            // 📧 *Email:* ${email}
-            // 📞 *Phone:* +${country} ${phone}
-
-            // 📘 _Requested Free Module from Website_
-            // `;
-
-            //             const adminPhone = "918767010062";
-            //             window.open(
-            //                 `https://wa.me/${adminPhone}?text=${encodeURIComponent(whatsappMessage)}`,
-            //                 "_blank"
-            //             );
         }
     };
 
     return (
-        <div className="py-20 relative">
-
-            {/* ✅ Success Popup */}
-            {successPopup && (
-                <div className="success-popup fixed top-6 right-6 bg-green-600 text-white px-6 py-3 rounded-lg shadow-lg z-[9999]">
-                    ✅ Module is downloading...
-                </div>
-            )}
-
+        <div className="py-20">
             <motion.div
                 ref={ref}
                 initial={{ opacity: 0, y: 50 }}
@@ -105,48 +82,54 @@ const Connect500 = () => {
                 transition={{ duration: 1, ease: "easeOut" }}
                 className="flex flex-col lg:flex-row items-center justify-between max-w-7xl mx-auto gap-12"
             >
-                {/* Left Side */}
+                {/* LEFT SIDE */}
                 <section
                     className="relative w-full h-[60vh] md:h-[50vh] flex items-center justify-center bg-cover bg-center rounded-none lg:rounded-2xl shadow-lg"
                     style={{ backgroundImage: "url('/connect500.png')" }}
                 >
-                    <div className="text-white text-center px-6">
-                        <h1 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-4 drop-shadow">
+                    <motion.div
+                        initial={{ opacity: 0, y: 50 }}
+                        animate={isInView ? { opacity: 1, y: 0 } : {}}
+                        transition={{ duration: 1, ease: "easeOut" }}
+                        className="text-white text-center px-6 md:px-8"
+                    >
+                        <h1 className="drop-shadow-[0_2px_3px_rgba(0,0,0,0.6)] text-2xl md:text-[22px] lg:text-4xl font-semibold mb-4 leading-snug">
                             Connect with 500 Million Reasons to Learn
                         </h1>
-                        <p className="drop-shadow text-base md:text-[16px]">
-                            Learn from India’s best Spanish teachers. Get personalized coaching for CBSE, DELE, and fluency.
+
+                        <p className="drop-shadow-[0_1px_3px_rgba(0,0,0,0.6)] text-base md:text-[16px]">
+                            Learn from the best Spanish teachers online in India, get personalized CBSE Spanish coaching, 
+                            and achieve your goals with our Spanish exam preparation and DELE coaching programs.
                         </p>
-                    </div>
+                    </motion.div>
                 </section>
 
-                {/* Right Side Form */}
+                {/* RIGHT SIDE - FORM */}
                 <div className="w-full lg:w-[680px] bg-white p-8 rounded-none lg:rounded-2xl shadow-lg">
                     <h2 className="text-2xl font-semibold mb-6">Download the Free Module</h2>
 
                     <form onSubmit={handleSubmit}>
-                        {/* ✅ Email */}
+                        {/* ✅ Email Input */}
                         <div className="mb-4">
                             <input
                                 type="email"
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
                                 placeholder="Enter your email"
-                                className={`w-full px-4 py-3 rounded-xl bg-[#F5F7FA] text-gray-700 border ${errors.email ? "border-red-400" : "border-[#E3E6EA]"
-                                    } focus:outline-none focus:ring-2 ${errors.email ? "ring-red-300" : "ring-yellow-300"
-                                    }`}
+                                className={`w-full px-4 py-3 rounded-xl bg-[#F5F7FA] text-gray-700 border ${
+                                    errors.email ? "border-red-400 ring-red-300" : "border-[#E3E6EA] ring-yellow-300"
+                                } focus:outline-none focus:ring-2`}
                             />
                             {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
                         </div>
 
-                        {/* ✅ Country Code + Phone */}
+                        {/* ✅ Country + Phone */}
                         <div className="flex flex-col sm:flex-row gap-3 mb-4">
-
-                            {/* Country Code Dropdown */}
+                            {/* Country Dropdown */}
                             <div className="relative w-full sm:w-1/2">
                                 <select
                                     className="w-full px-4 py-3 rounded-xl bg-[#F5F7FA] text-gray-700 border border-[#E3E6EA] 
-                       focus:outline-none focus:ring-2 focus:ring-yellow-300 appearance-none"
+                                    focus:outline-none focus:ring-2 focus:ring-yellow-300 appearance-none"
                                     value={country}
                                     onChange={(e) => setCountry(e.target.value)}
                                 >
@@ -168,15 +151,15 @@ const Connect500 = () => {
                                 value={phone}
                                 onChange={(e) => setPhone(e.target.value)}
                                 placeholder="Enter phone number"
-                                className={`w-full sm:w-1/2 px-4 py-3 rounded-xl bg-[#F5F7FA] text-gray-700 border ${errors.phone ? "border-red-400" : "border-[#E3E6EA]"
-                                    } focus:outline-none focus:ring-2 ${errors.phone ? "ring-red-300" : "ring-yellow-300"
-                                    }`}
+                                className={`w-full sm:w-1/2 px-4 py-3 rounded-xl bg-[#F5F7FA] text-gray-700 border ${
+                                    errors.phone ? "border-red-400 ring-red-300" : "border-[#E3E6EA] ring-yellow-300"
+                                } focus:outline-none focus:ring-2`}
                             />
                         </div>
 
                         {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone}</p>}
 
-                        {/* ✅ Button */}
+                        {/* ✅ Submit Button */}
                         <motion.button
                             type="submit"
                             className="relative w-full overflow-hidden text-black font-semibold py-3 rounded-[10px] shadow-md mt-6"

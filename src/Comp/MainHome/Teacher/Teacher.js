@@ -29,7 +29,7 @@ const Teacher = () => {
                 initial={{ opacity: 0, y: 40 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.8, ease: "easeOut" }}
-                className="text-[20px] md:text-3xl lg:text-[24px] font-semibold mb-8"
+                className="text-2xl md:text-2xl lg:text-3x font-semibold mb-8"
             >
                 Meet Our Instructor
             </motion.h2>
