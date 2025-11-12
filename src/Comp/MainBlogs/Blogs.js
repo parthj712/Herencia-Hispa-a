@@ -46,8 +46,6 @@ const Blogs = () => {
                         </div>
                     </div>
 
-
-
                 </div>
             </Box>
         </div>
