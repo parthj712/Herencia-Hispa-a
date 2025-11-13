@@ -47,9 +47,9 @@ export default function EnrollmentPricing() {
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.5 }}
                         viewport={{ once: true }}
-                        className="text-left bg-white/80 p-6 rounded-2xl backdrop-blur-md w-full max-w-xl"
+                        className="mx-9 text-left bg-white/80 p-6 rounded-2xl backdrop-blur-md max-w-sm lg:max-w-xl md:max-w-xl "
                     >
-                        <h3 className="font-semibold text-[24px] mb-2 ">We offer</h3>
+                        <h3 className="font-semibold text-[24px] mb-2">We offer</h3>
                         <p className="font-medium text-[20px] ">
                             Free Demo Class to all prospective students.
                         </p>
