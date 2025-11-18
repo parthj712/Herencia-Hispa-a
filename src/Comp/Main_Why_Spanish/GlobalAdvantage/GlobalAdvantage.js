@@ -20,7 +20,7 @@ const advantages = [
 
 export default function GlobalAdvantage() {
     return (
-        <div className="relative w-full py-24 overflow-hidden bg-white">
+        <div className="hover:cursor-default relative w-full py-24 overflow-hidden bg-white">
 
             {/* 🌍 Infinite Moving Background */}
             <div className="absolute inset-0 w-full h-full z-0 overflow-hidden">

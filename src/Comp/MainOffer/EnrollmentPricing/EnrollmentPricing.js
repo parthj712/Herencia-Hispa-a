@@ -8,7 +8,7 @@ import Link from "next/link";
 export default function EnrollmentPricing() {
     return (
         <div
-            className="my-20 rounded-4xl w-full py-20 relative overflow-hidden"
+            className="hover:cursor-default my-20 rounded-4xl w-full py-20 relative overflow-hidden"
             style={{
                 background:
                     "linear-gradient(270deg, #FFFDF4 0%, #FFF7E1 50%, #FFF3C4 100%)",
@@ -199,7 +199,7 @@ export default function EnrollmentPricing() {
                         className="hover:cursor-pointer relative overflow-hidden text-black font-semibold px-8 py-3 rounded-[10px] shadow-md hover:opacity-90 transition-all duration-300"
                         style={{
                             fontFamily: "Poppins, sans-serif",
-                            fontSize: "16px",
+                            fontSize: "18px",
                             letterSpacing: "0.3px",
                         }}
                     >

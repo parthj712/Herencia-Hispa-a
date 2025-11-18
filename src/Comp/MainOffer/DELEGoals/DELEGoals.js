@@ -40,6 +40,7 @@ export default function DELEGoals() {
                             viewport={{ once: true }}
                         >
                             <Card
+                                className="hover:cursor-default"
                                 elevation={0}
                                 sx={{
                                     borderRadius: "18px",
