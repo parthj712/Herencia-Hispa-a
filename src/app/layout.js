@@ -8,6 +8,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import PageWrapper from "@/Comp/PageWrapper/PageWrapper";
 import { MenuProvider } from "@/Comp/MenuProvider/MenuProvider";
 import PopupAd from "@/Comp/PopupAd/PopupAd";
+import PageTransition from "@/Comp/PageWrapper/PageWrapper";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -41,24 +42,26 @@ export default function RootLayout({ children }) {
         className={`${poppins.className} antialiased`}
       >
 
-         <PopupAd
+        <PopupAd
           img="/Ad1.jpeg"
           link="https://example.com"
           countdownStart={5}
         />
 
 
-        <PageWrapper>
-          <MenuProvider>
-            <Navbar />
+
+        <MenuProvider>
+          <Navbar />
+          <PageTransition>
             <main className="flex-grow">{children}</main>
-            <FloatingContact />
-            <Footer />
-          </MenuProvider>
-        </PageWrapper>
+          </PageTransition>
+          <FloatingContact />
+          <Footer />
+        </MenuProvider>
 
 
-       
+
+
       </body>
     </html>
   );
