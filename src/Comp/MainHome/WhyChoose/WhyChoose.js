@@ -111,20 +111,18 @@ const WhyChoose = () => {
             </motion.div>
 
 
-            <Link
-                href="/course-brochure.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                download // ✅ tells browser to download instead of open
+            <a
+                href="/Herencia_Hispaña_Course_Brochure.pdf"
+                download="Herencia_Hispana_Course_Brochure.pdf"
+                className="block mt-20"
             >
                 <motion.button
-                    className="mt-20 hover:cursor-pointer relative overflow-hidden text-black font-semibold px-6 py-3 md:py-2 lg:py-2 rounded-full shadow-md hover:opacity-90 transition-all duration-300"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
+                    className="hover:cursor-pointer relative overflow-hidden text-black font-semibold px-6 py-3 rounded-full shadow-md transition-all duration-300"
                 >
-                    {/* Animated gradient background */}
                     <motion.div
-                        className="absolute inset-0 z-0 rounded-[10px]"
+                        className="absolute inset-0 z-0 rounded-full"
                         style={{
                             background:
                                 "linear-gradient(270deg, #FDB900, #FFD563, #FDB900)",
@@ -138,14 +136,12 @@ const WhyChoose = () => {
                             ease: "linear",
                             repeat: Infinity,
                         }}
-                    ></motion.div>
+                    />
 
-                    {/* Button Text */}
-                    <span className="text-[16px] lg:text-[20px] md:text-[20px] relative z-10 tracking-[0.5px]">
-                        DOWNLOAD COURSE BROCHURE
-                    </span>
+                    <span className="relative z-10">DOWNLOAD COURSE BROCHURE</span>
                 </motion.button>
-            </Link>
+            </a>
+
 
         </div>
     );

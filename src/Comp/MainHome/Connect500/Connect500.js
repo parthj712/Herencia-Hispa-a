@@ -17,10 +17,10 @@ const Connect500 = () => {
     // ✅ COUNTRY-WISE PHONE VALIDATION
     const validatePhoneByCountry = (countryCode, phoneNumber) => {
         switch (countryCode) {
-            case "91": 
+            case "91":
                 return /^[6-9]\d{9}$/.test(phoneNumber);
 
-            case "1": 
+            case "1":
                 return /^[2-9]\d{2}[2-9]\d{6}$/.test(phoneNumber);
 
             case "34":
@@ -61,17 +61,28 @@ const Connect500 = () => {
         return valid;
     };
 
+    // const handleSubmit = (e) => {
+    //     e.preventDefault();
+    //     if (validate()) {
+    //         window.open("https://forms.gle/xJjxwJgZmxmixHbN8", "_blank");
+
+    //         const link = document.createElement("a");
+    //         link.href = "/Free_Module.pdf";
+    //         link.download = "Spanish_Free_Module.pdf";
+    //         link.click();
+    //     }
+    // };
+
+
     const handleSubmit = (e) => {
         e.preventDefault();
         if (validate()) {
-            window.open("https://forms.gle/xJjxwJgZmxmixHbN8", "_blank");
 
-            const link = document.createElement("a");
-            link.href = "/Free_Module.pdf";
-            link.download = "Spanish_Free_Module.pdf";
-            link.click();
+            // 2️⃣ Instead of auto-download, redirect to a download page or show button
+            window.location.href = "/download-module";
         }
     };
+
 
     return (
         <div className="py-20">
@@ -98,7 +109,7 @@ const Connect500 = () => {
                         </h1>
 
                         <p className="drop-shadow-[0_1px_3px_rgba(0,0,0,0.6)] text-base md:text-[16px]">
-                            Learn from the best Spanish teachers online in India, get personalized CBSE Spanish coaching, 
+                            Learn from the best Spanish teachers online in India, get personalized CBSE Spanish coaching,
                             and achieve your goals with our Spanish exam preparation and DELE coaching programs.
                         </p>
                     </motion.div>
@@ -116,9 +127,8 @@ const Connect500 = () => {
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
                                 placeholder="Enter your email"
-                                className={`w-full px-4 py-3 rounded-xl bg-[#F5F7FA] text-gray-700 border ${
-                                    errors.email ? "border-red-400 ring-red-300" : "border-[#E3E6EA] ring-yellow-300"
-                                } focus:outline-none focus:ring-2`}
+                                className={`w-full px-4 py-3 rounded-xl bg-[#F5F7FA] text-gray-700 border ${errors.email ? "border-red-400 ring-red-300" : "border-[#E3E6EA] ring-yellow-300"
+                                    } focus:outline-none focus:ring-2`}
                             />
                             {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
                         </div>
@@ -151,9 +161,8 @@ const Connect500 = () => {
                                 value={phone}
                                 onChange={(e) => setPhone(e.target.value)}
                                 placeholder="Enter phone number"
-                                className={`w-full sm:w-1/2 px-4 py-3 rounded-xl bg-[#F5F7FA] text-gray-700 border ${
-                                    errors.phone ? "border-red-400 ring-red-300" : "border-[#E3E6EA] ring-yellow-300"
-                                } focus:outline-none focus:ring-2`}
+                                className={`w-full sm:w-1/2 px-4 py-3 rounded-xl bg-[#F5F7FA] text-gray-700 border ${errors.phone ? "border-red-400 ring-red-300" : "border-[#E3E6EA] ring-yellow-300"
+                                    } focus:outline-none focus:ring-2`}
                             />
                         </div>
 
