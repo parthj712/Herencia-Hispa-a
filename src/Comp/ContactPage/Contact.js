@@ -29,7 +29,7 @@ const Contact = () => {
   const [cities, setCities] = useState([]);
 
   const [errors, setErrors] = useState({});
-
+    
   // Load countries once
   useEffect(() => {
     setCountries(Country.getAllCountries());

@@ -14,58 +14,112 @@ const PopupAd = ({ countdownStart = 8 }) => {
   const [clicks, setClicks] = useState(0);
   const [ad, setAd] = useState(null);
 
-  // Fetch ads using Axios
+  // // Fetch ads using Axios
+  // useEffect(() => {
+  //   const fetchAd = async () => {
+  //     try {
+  //       const res = await API.get("/ads");
+  //       const ads = res.data?.ads || [];
+  //       // ✅ Filter only active ads
+  //       const activeAds = ads.filter((ad) => ad.isActive === true);
+  //       if (activeAds.length > 0) {
+  //         setAd({
+  //           img: activeAds[0].imageUrl,
+  //           link: activeAds[0].link || "#",
+  //         });
+  //       } else {
+  //         console.log("No active ads found.");
+  //       }
+  //     } catch (error) {
+  //       console.log("Ad fetch failed ❌", error);
+  //     }
+  //   };
+  //   fetchAd();
+  // }, []);
+
+  // // Show popup after 1 second
+  // useEffect(() => {
+  //   const timer = setTimeout(() => setOpen(true), 1000);
+  //   return () => clearTimeout(timer);
+  // }, []);
+
+  // // Load click count
+  // useEffect(() => {
+  //   const storedClicks = localStorage.getItem("popupAdClicks");
+  //   if (storedClicks) setClicks(Number(storedClicks));
+  // }, []);
+
+  // // Countdown logic
+  // useEffect(() => {
+  //   if (!open) return;
+
+  //   const countdownTimer = setInterval(() => {
+  //     setCountdown((prev) => {
+  //       if (prev <= 1) {
+  //         setOpen(false);
+  //         clearInterval(countdownTimer);
+  //         return 0;
+  //       }
+  //       return prev - 1;
+  //     });
+  //   }, 1000);
+
+  //   return () => clearInterval(countdownTimer);
+  // }, [open]);
+
   useEffect(() => {
+    let popupTimer;
+    let countdownTimer;
+
+    // 1. Fetch Ads
     const fetchAd = async () => {
       try {
         const res = await API.get("/ads");
         const ads = res.data?.ads || [];
-        // ✅ Filter only active ads
         const activeAds = ads.filter((ad) => ad.isActive === true);
+
         if (activeAds.length > 0) {
           setAd({
             img: activeAds[0].imageUrl,
             link: activeAds[0].link || "#",
           });
-        } else {
-          console.log("No active ads found.");
         }
       } catch (error) {
         console.log("Ad fetch failed ❌", error);
       }
     };
+
     fetchAd();
-  }, []);
 
-  // Show popup after 1 second
-  useEffect(() => {
-    const timer = setTimeout(() => setOpen(true), 1000);
-    return () => clearTimeout(timer);
-  }, []);
-
-  // Load click count
-  useEffect(() => {
+    // 2. Load stored clicks
     const storedClicks = localStorage.getItem("popupAdClicks");
     if (storedClicks) setClicks(Number(storedClicks));
-  }, []);
 
-  // Countdown logic
-  useEffect(() => {
-    if (!open) return;
+    // 3. Timer to show popup after 1 second
+    popupTimer = setTimeout(() => {
+      setOpen(true);
 
-    const countdownTimer = setInterval(() => {
-      setCountdown((prev) => {
-        if (prev <= 1) {
-          setOpen(false);
-          clearInterval(countdownTimer);
-          return 0;
-        }
-        return prev - 1;
-      });
+      // 4. Start countdown AFTER popup opens
+      countdownTimer = setInterval(() => {
+        setCountdown((prev) => {
+          if (prev <= 1) {
+            clearInterval(countdownTimer);
+            setOpen(false);
+            return 0;
+          }
+          return prev - 1;
+        });
+      }, 1000);
     }, 1000);
 
-    return () => clearInterval(countdownTimer);
-  }, [open]);
+    // CLEANUP
+    return () => {
+      clearTimeout(popupTimer);
+      clearInterval(countdownTimer);
+    };
+  }, []);
+
+
 
   // Handle ad click
   const handleClick = () => {
