@@ -17,11 +17,11 @@ export default function LearningSupport() {
     return (
         <div className="w-full py-20 overflow-hidden bg-white">
             <div className="max-w-7xl mx-auto px-4 text-center">
-                <h2 className="text-2xl md:text-3xl font-semibold mb-4 text-gray-900">
+                <h2 className="hover:cursor-default text-2xl md:text-3xl font-semibold mb-4 text-gray-900">
                     Unique Learning Technology & Support
                 </h2>
 
-                <p className="text-gray-700 max-w-3xl mx-auto mb-14 text-[18px] leading-relaxed">
+                <p className="hover:cursor-default text-gray-700 max-w-3xl mx-auto mb-14 text-[18px] leading-relaxed">
                     We use modern techniques and platform features to ensure learning is
                     effective, confident, and engaging.
                 </p>
@@ -41,7 +41,7 @@ export default function LearningSupport() {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: i * 0.1 }}
                             viewport={{ once: true }}
-                            className="snap-start min-w-[45%] sm:min-w-0"
+                            className="hover:cursor-default snap-start min-w-[45%] sm:min-w-0"
                         >
                             {/* Animated Aura Wrapper */}
                             <motion.div

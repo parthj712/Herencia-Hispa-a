@@ -12,7 +12,7 @@ import RunningText from './RunningText/RunningText'
 
 const MainHome = () => {
     return (
-        <div >
+        <div>
             <Welcome />
             <HeroSection />
             <Connect500 />
