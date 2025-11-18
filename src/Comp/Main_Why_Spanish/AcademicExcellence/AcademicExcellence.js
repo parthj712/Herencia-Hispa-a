@@ -6,7 +6,7 @@ import { User, GraduationCap } from "lucide-react";
 
 export default function AcademicExcellence() {
     return (
-        <div className="w-full py-20 bg-white relative overflow-hidden">
+        <div className="hover:cursor-default w-full py-20 bg-white relative overflow-hidden">
             <div className="max-w-7xl mx-auto px-4">
                 {/* Title */}
                 <h2 className="text-center text-2xl md:text-3xl font-semibold mb-16 text-gray-900">

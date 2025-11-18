@@ -33,7 +33,7 @@ export default function ProgramStructure() {
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true }}
-                    className="max-w-3xl mx-auto mb-14 text-[18px] leading-relaxed "
+                    className="hover:cursor-default max-w-3xl mx-auto mb-14 text-[18px] leading-relaxed "
                 >
                     Our curriculum is structured and led by our expert faculty with over 5
                     years of experience, ensuring a focused and results-driven approach.
@@ -49,6 +49,7 @@ export default function ProgramStructure() {
                 >
                     {/* Card 1 */}
                     <Card
+                        className="hover:cursor-default"
                         elevation={0}
                         sx={{
                             borderRadius: "18px",
