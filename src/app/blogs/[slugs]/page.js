@@ -2,10 +2,10 @@ import { blogData } from "@/Comp/BlogCard/Contant";
 import { Box } from "@mui/material";
 
 
-export default function BlogDetails({ params }) {
-    const { slug } = params;
+export default async function BlogDetails(props) {
+    const { slugs } = await props.params; // ✅ UNWRAP THE PROMISE HERE
 
-    const blog = blogData.find((b) => b.slugs === slug);
+    const blog = blogData.find((b) => b.slugs === slugs);
 
     if (!blog) {
         return <p className="text-center py-20 text-xl">Blog not found!</p>;
@@ -21,12 +21,12 @@ export default function BlogDetails({ params }) {
                             background: "linear-gradient(90deg, #3b0ca3 0%, #7026e2 100%)",
                         }}
                     >
-                        <p className="text-white">THE BLOG: Herencia Hispaña | The Instructor's Guide</p>
+                        <p className="text-white">
+                            THE BLOG: Herencia Hispaña | The Instructor's Guide
+                        </p>
                     </Box>
                 </div>
             </Box>
-
-
 
             <div className="max-w-7xl mx-auto px-6 py-2">
                 <img
@@ -43,7 +43,6 @@ export default function BlogDetails({ params }) {
                     {blog.content}
                 </div>
             </div>
-
         </div>
     );
 }
