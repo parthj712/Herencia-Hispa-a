@@ -1,4 +1,5 @@
 "use client";
+
 import React from "react";
 import { Card, CardContent, CardMedia, Button } from "@mui/material";
 import Link from "next/link";
@@ -12,7 +13,13 @@ const BlogCard = ({
   date,
   onClick = () => {},
 }) => {
-  console.log(slugs);
+//   console.log(slug);
+
+
+console.log("Opening Slug:", slugs)
+
+
+
   return (
     <Link href={`/blogs/${slugs}`} className="no-underline">
       <Card

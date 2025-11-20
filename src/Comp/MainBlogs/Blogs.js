@@ -10,6 +10,9 @@ const Blogs = () => {
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   const isTablet = useMediaQuery(theme.breakpoints.between("sm", "md"));
 
+
+  console.log("DATA:", blogData);
+
   return (
     <div>
       <Box className="w-full flex flex-col">
@@ -49,12 +52,12 @@ const Blogs = () => {
                   slugs={blog.slugs}
                   image={blog.image}
                   readTime={blog.readTime}
-                  title={blog.title}
+                  title={blog.title}    
                   author={blog.author}
                   date={blog.date}
                 />
               ))}
-            </div>
+            </div>  
           </div>
         </div>
       </Box>
