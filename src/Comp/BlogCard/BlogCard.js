@@ -13,12 +13,9 @@ const BlogCard = ({
   date,
   onClick = () => {},
 }) => {
-//   console.log(slug);
+  //
 
-
-console.log("Opening Slug:", slugs)
-
-
+  console.log("Opening Slug:", slugs);
 
   return (
     <Link href={`/blogs/${slugs}`} className="no-underline">
