@@ -1,15 +1,28 @@
 "use client";
 
 import { Box, useMediaQuery, useTheme } from "@mui/material";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import BlogCard from "../BlogCard/BlogCard";
-import { blogData } from "../BlogCard/Contant";
+
+import API from "@/server/api";
 
 const Blogs = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   const isTablet = useMediaQuery(theme.breakpoints.between("sm", "md"));
+  const [blogData, setBlogData] = useState([]);
 
+  const fetchBlogData = async () => {
+    try {
+      const res = await API.get("/blogs/active-blogs");
+      setBlogData(res.data);
+    } catch (error) {
+      console.log("faild to fetch data", error.message);
+    }
+  };
+  useEffect(() => {
+    fetchBlogData();
+  }, []);
 
   console.log("DATA:", blogData);
 
@@ -46,18 +59,28 @@ const Blogs = () => {
             </Box>
 
             <div className="p-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-              {blogData.map((blog, index) => (
-                <BlogCard
-                  key={blog.slugs || index}
-                  slugs={blog.slugs}
-                  image={blog.image}
-                  readTime={blog.readTime}
-                  title={blog.title}    
-                  author={blog.author}
-                  date={blog.date}
-                />
-              ))}
-            </div>  
+              {blogData.map((blog, index) => {
+                const formattedDate = new Date(
+                  blog.updatedAt || blog.createdAt || blog.date
+                ).toLocaleDateString("en-GB", {
+                  day: "2-digit",
+                  month: "short",
+                  year: "numeric",
+                });
+
+                return (
+                  <BlogCard
+                    key={blog.slugs || index}
+                    slugs={blog.slug}
+                    image={blog.imgUrl}
+                    readTime={blog.timeChips}
+                    title={blog.title}
+                    author={blog.creator}
+                    date={formattedDate}
+                  />
+                );
+              })}
+            </div>
           </div>
         </div>
       </Box>
