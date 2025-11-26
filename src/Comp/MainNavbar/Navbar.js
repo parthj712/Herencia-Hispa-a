@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useMenu } from "../MenuProvider/MenuProvider";
+import TopBar from "../TopBar/TopBar";
 
 export default function Navbar() {
     const { menuOpen, setMenuOpen } = useMenu();
@@ -62,6 +63,7 @@ export default function Navbar() {
 
     return (
         <nav className="w-full bg-white shadow-sm sticky top-0 z-50">
+            <TopBar/>
             <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
 
                 {/* Logo */}

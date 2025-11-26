@@ -50,7 +50,7 @@ export default function RootLayout({ children }) {
         />
 
 
-        <TopBar />     {/* ⭐ Add this line */}
+        {/* <TopBar />     ⭐ Add this line */}
 
 
 
