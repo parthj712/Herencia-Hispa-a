@@ -9,6 +9,7 @@ import PageWrapper from "@/Comp/PageWrapper/PageWrapper";
 import { MenuProvider } from "@/Comp/MenuProvider/MenuProvider";
 import PopupAd from "@/Comp/PopupAd/PopupAd";
 import PageTransition from "@/Comp/PageWrapper/PageWrapper";
+import TopBar from "@/Comp/TopBar/TopBar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -47,6 +48,9 @@ export default function RootLayout({ children }) {
           link="https://example.com"
           countdownStart={5}
         />
+
+
+        <TopBar />     {/* ⭐ Add this line */}
 
 
 

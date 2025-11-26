@@ -158,6 +158,41 @@ body {
 }
 
 @keyframes popupFade {
-  0% { transform: scale(0.8); opacity: 0; }
-  100% { transform: scale(1); opacity: 1; }
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
+
+
+.marquee-wrapper {
+  display: flex;
+  width: 200%;
+  /* twice the width */
+  animation: smooth-marquee 30s linear infinite;
+}
+
+.marquee-content {
+  width: 100%;
+  white-space: nowrap;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+@keyframes smooth-marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+    /* shift by half because 2 copies */
+  }
 }

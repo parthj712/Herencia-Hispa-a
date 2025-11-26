@@ -26,25 +26,48 @@ export default function Navbar() {
         { name: "Blogs", path: "/blogs" },
         { name: "What we offer", path: "/offer" },
         { name: "Why Spanish", path: "/why-spanish" },
+
+        // ⭐ Freebies scroll-only item
+        { name: "Freebies", scrollTo: "freebies" },
     ];
 
-    // prefetch
+    // Prefetch regular routes
     useEffect(() => {
         navItems.forEach((item) => {
-            if (!item.dropdown) router.prefetch(item.path);
+            if (!item.dropdown && item.path) router.prefetch(item.path);
         });
     }, []);
+
+    // ⭐ Smooth scroll handler
+    const handleScroll = (sectionId) => {
+        if (window.location.pathname === "/") {
+            // Already on home → smooth scroll
+            document.getElementById(sectionId)?.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+            });
+        } else {
+            // Go home first → then scroll
+            router.push("/");
+
+            // Delay to ensure page loads
+            setTimeout(() => {
+                document.getElementById(sectionId)?.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                });
+            }, 600);
+        }
+    };
 
     return (
         <nav className="w-full bg-white shadow-sm sticky top-0 z-50">
             <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
 
                 {/* Logo */}
-                {/* Logo (Clickable → Home) */}
                 <Link href="/" className="flex items-center space-x-2">
                     <img src="/logo1.png" alt="Logo" className="h-12 w-auto cursor-pointer" />
                 </Link>
-
 
                 {/* Desktop Navigation */}
                 <div className="hidden lg:flex items-center space-x-10">
@@ -60,10 +83,8 @@ export default function Navbar() {
                                     {item.name}
                                 </p>
 
-                                {/* Invisible hover bridge to prevent flicker */}
                                 <div className="absolute left-0 top-6 w-full h-4"></div>
 
-                                {/* Dropdown */}
                                 <AnimatePresence>
                                     {openDropdown === index && (
                                         <motion.div
@@ -71,11 +92,9 @@ export default function Navbar() {
                                             animate={{ opacity: 1, y: 0 }}
                                             exit={{ opacity: 0, y: -10 }}
                                             transition={{ duration: 0.25 }}
-                                            className="
-                                                absolute left-0 mt-5 flex flex-col 
+                                            className="absolute left-0 mt-5 flex flex-col 
                                                 bg-white shadow-lg rounded-md border 
-                                                py-2 w-44 z-50
-                                            "
+                                                py-2 w-44 z-50"
                                         >
                                             {item.dropdown.map((subItem) => (
                                                 <Link
@@ -90,6 +109,16 @@ export default function Navbar() {
                                     )}
                                 </AnimatePresence>
                             </div>
+                        ) : item.scrollTo ? (
+                            // ⭐ Freebies scroll link (desktop)
+                            <p
+                                key={item.name}
+                                onClick={() => handleScroll(item.scrollTo)}
+                                className="relative text-[16px] font-medium text-gray-900 hover:text-indigo-600 transition cursor-pointer group"
+                            >
+                                {item.name}
+                                <span className="absolute left-0 bottom-0 w-0 h-[2.5px] bg-indigo-600 rounded-full transition-all duration-300 group-hover:w-full"></span>
+                            </p>
                         ) : (
                             <Link
                                 key={item.name}
@@ -147,6 +176,18 @@ export default function Navbar() {
                                         ))}
                                     </div>
                                 </div>
+                            ) : item.scrollTo ? (
+                                // ⭐ Freebies scroll link (mobile)
+                                <p
+                                    key={item.name}
+                                    className="text-[20px] font-semibold hover:text-indigo-600 transition cursor-pointer"
+                                    onClick={() => {
+                                        setMenuOpen(false);
+                                        setTimeout(() => handleScroll(item.scrollTo), 300);
+                                    }}
+                                >
+                                    {item.name}
+                                </p>
                             ) : (
                                 <Link
                                     key={item.name}
@@ -159,7 +200,6 @@ export default function Navbar() {
                             )
                         )}
 
-                        {/* Social Links */}
                         <div className="flex items-end space-x-2">
                             <img src="/logo1.png" alt="Logo" className="h-12 w-auto" />
                         </div>

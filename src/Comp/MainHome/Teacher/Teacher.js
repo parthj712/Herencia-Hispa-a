@@ -25,14 +25,7 @@ const Teacher = () => {
             }}
             ref={ref}
         >
-            <motion.h2
-                initial={{ opacity: 0, y: 40 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.8, ease: "easeOut" }}
-                className="text-2xl md:text-2xl lg:text-3x font-semibold mb-8"
-            >
-                Meet Our Instructor
-            </motion.h2>
+
 
             <motion.div
                 initial={{ opacity: 0, y: 50 }}
@@ -71,6 +64,16 @@ const Teacher = () => {
                         transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
                     >
                         <Box display={"flex"} flexDirection={"column"} alignItems={"center"} gap={2}>
+
+                            <motion.h2
+                                initial={{ opacity: 0, y: 40 }}
+                                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                                transition={{ duration: 0.8, ease: "easeOut" }}
+                                className="text-2xl md:text-2xl lg:text-3x font-semibold mb-8"
+                            >
+                                Meet Our Instructor
+                            </motion.h2>
+
                             <div className="relative w-[320px] md:w-[600px] lg:w-[600px] text-center text-[18px] md:text-[20px] lg:text-[22px] leading-relaxed">
                                 {/* Opening Quote (behind text, semi-transparent) */}
                                 <span className="absolute left-10 -top-8 text-yellow-400 text-[108px] font-bold opacity-30">

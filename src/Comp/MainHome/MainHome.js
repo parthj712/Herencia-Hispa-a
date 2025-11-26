@@ -9,6 +9,7 @@ import Testinomials from './Testinomials/Testinomials'
 import MainFAQ from './FAQ/MainFAQ'
 import Join from './Join/Join'
 import RunningText from './RunningText/RunningText'
+import Exam from './Exam/Exam'
 
 const MainHome = () => {
     return (
@@ -20,6 +21,7 @@ const MainHome = () => {
             <Teacher />
             <Importance/>
             <WhyChoose/>
+            {/* <Exam/>  */}
             <Testinomials/>
             <MainFAQ/>
             <Join/>
