@@ -88,10 +88,21 @@ export default function ProgramStructure() {
                                     to question paper solving and doubt solving to ensure exam
                                     readiness.
                                 </li>
+                                <li>
+                                    <strong>Personalized Instruction:</strong> Every student
+                                    receives tailored, high-quality guidance.
+                                </li>
+                                <li>
+                                    <strong>Levels Covered:</strong> From DELE A1 Escolares to DELE C2.
+                                </li>
+                                <li>
+                                    <strong>Small Batch Advantage:</strong> Only <u>8 students per batch</u> for better attention and improved results.
+                                </li>
                             </ul>
                         </CardContent>
                     </Card>
 
+                    {/* Card 2 */}
                     {/* Card 2 */}
                     <Card
                         elevation={0}
@@ -112,8 +123,7 @@ export default function ProgramStructure() {
                                 left: 0,
                                 width: "100%",
                                 height: "6px",
-                                background:
-                                    "linear-gradient(to right, #FDB900, #FECA3E, #FFDC7C)",
+                                background: "linear-gradient(to right, #FDB900, #FECA3E, #FFDC7C)",
                             },
                         }}
                     >
@@ -121,7 +131,8 @@ export default function ProgramStructure() {
                             <h3 className="font-semibold text-[22px] mb-3 ">
                                 Program Highlights
                             </h3>
-                            <ul className="space-y-3 leading-relaxed list-disc pl-5  text-[16px]">
+
+                            <ul className="space-y-3 leading-relaxed list-disc pl-5 text-[16px]">
                                 <li>
                                     <strong>Expert Guidance:</strong> Instruction by faculty with
                                     5+ years of experience.
@@ -134,13 +145,17 @@ export default function ProgramStructure() {
                                     <strong>Specialized Workshops:</strong> Includes ‘4 seasons–4
                                     basics of Spanish workshop camps’.
                                 </li>
+
                                 <li>
-                                    <strong>Personalized Instruction:</strong> Every student
-                                    receives tailored, high-quality guidance.
+                                    <strong>Study Material Worth ₹2000/- Included:</strong> Full access to premium notes, worksheets & practice sets.
+                                </li>
+                                <li>
+                                    <strong>Free Recorded Sessions:</strong> Up to <u>5 recorded class replays</u> provided if a student misses live sessions.
                                 </li>
                             </ul>
                         </CardContent>
                     </Card>
+
                 </motion.div>
             </div>
         </div>

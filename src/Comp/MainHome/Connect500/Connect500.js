@@ -76,28 +76,31 @@ const Connect500 = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (validate()) {
-      try {
-        const response = await API.post("/freebies", {
-          email,
-          phone: `${country}${phone}`,
-        });
 
-        if (response.data.success) {
-          // 2️⃣ Instead of auto-download, redirect to a download page or show button
-          window.location.href = "/download-module";
-        } else {
-          alert("Something went wrong! Please try again.");
-        }
-      } catch (error) {
-        console.error(error);
-        alert("Server error! Please try again later.");
+    try {
+      const response = await API.post("/freebies", {
+        email,
+        phone: `${country}-${phone}`,
+      });
+
+      if (response.data.success) {
+        alert("Submitted successfully!");
+
+        // Redirect user to download page
+        window.location.href = "/download-module";
+
+        // Optional: reset fields
+        setEmail("");
+        setPhone("");
       }
+    } catch (error) {
+      console.error(error);
+      alert(error.response?.data?.message || "Something went wrong!");
     }
   };
 
   return (
-    <div className="py-20">
+    <div className="py-20" id="freebies">
       <motion.div
         ref={ref}
         initial={{ opacity: 0, y: 50 }}
@@ -142,11 +145,10 @@ const Connect500 = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email"
-                className={`w-full px-4 py-3 rounded-xl bg-[#F5F7FA] text-gray-700 border ${
-                  errors.email
+                className={`w-full px-4 py-3 rounded-xl bg-[#F5F7FA] text-gray-700 border ${errors.email
                     ? "border-red-400 ring-red-300"
                     : "border-[#E3E6EA] ring-yellow-300"
-                } focus:outline-none focus:ring-2`}
+                  } focus:outline-none focus:ring-2`}
               />
               {errors.email && (
                 <p className="text-red-500 text-sm mt-1">{errors.email}</p>
@@ -181,11 +183,10 @@ const Connect500 = () => {
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
                 placeholder="Enter phone number"
-                className={`w-full sm:w-1/2 px-4 py-3 rounded-xl bg-[#F5F7FA] text-gray-700 border ${
-                  errors.phone
+                className={`w-full sm:w-1/2 px-4 py-3 rounded-xl bg-[#F5F7FA] text-gray-700 border ${errors.phone
                     ? "border-red-400 ring-red-300"
                     : "border-[#E3E6EA] ring-yellow-300"
-                } focus:outline-none focus:ring-2`}
+                  } focus:outline-none focus:ring-2`}
               />
             </div>
 

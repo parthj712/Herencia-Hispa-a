@@ -16,7 +16,7 @@ export default function Footer() {
 
     return (
         <footer className="bg-gradient-to-b from-[#FDB900] to-[#FFDC7C] text-black py-10 px-6 md:px-16">
-            <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-20 items-center">
+            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-20 items-start">
 
                 {/* Left Section - Logo & Social Icons */}
                 <div className="flex flex-col items-start md:items-start space-y-4">
@@ -61,14 +61,14 @@ export default function Footer() {
                 <div className="text-left md:text-left space-y-3">
                     <h3 className="font-bold text-xl">GET IN TOUCH</h3>
                     <div className="flex flex-col gap-6 items-start">
-                        <p className="text-[18px] flex items-start justify-center md:justify-start gap-2">
+                        <p className=" font-medium text-[18px] flex items-start justify-center md:justify-start gap-2">
                             <MapPin className="w-10 h-7 lg:w-10" />
                             202, A wing Shramasadhana apartments, Natuskar Lane, Markandi, Chiplun, 415605
                         </p>
 
                         <a
                             href="mailto:prabhudesaiamey95@gmail.com"
-                            className="text-[18px] flex items-center justify-center md:justify-start gap-2 hover:underline hover:text-blue-600 transition"
+                            className=" font-medium text-[18px] flex items-center justify-center md:justify-start gap-2 hover:underline hover:text-blue-600 transition"
                         >
                             <Mail className="w-5 h-5" />
                             prabhudesaiamey95@gmail.com
@@ -76,7 +76,7 @@ export default function Footer() {
 
                         <a
                             href="tel:+918767010062"
-                            className="text-[18px] flex items-center justify-center md:justify-start gap-2 hover:underline hover:text-blue-600 transition"
+                            className=" font-medium text-[18px] flex items-center justify-center md:justify-start gap-2 hover:underline hover:text-blue-600 transition"
                         >
                             <Phone className="w-5 h-5" />
                             +91 8767010062
@@ -94,7 +94,7 @@ export default function Footer() {
                                 <Link
                                     key={item.name}
                                     href={item.path}
-                                    className="relative text-[18px] font-medium text-gray-900 hover:text-indigo-600 transition-colors duration-300 group"
+                                    className="relative text-[18px] font-medium hover:text-indigo-600 transition-colors duration-300 group"
                                 >
                                     {item.name}
                                     <span className="mt-1 absolute left-0 bottom-0 w-0 h-[2.5px] bg-indigo-600 rounded-full transition-all duration-300 group-hover:w-full"></span>
