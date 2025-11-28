@@ -75,7 +75,7 @@ const PopupAd = ({ countdownStart = 8 }) => {
     const fetchAd = async () => {
       try {
         const res = await API.get("/ads");
-        const ads = res.data?.ads || [];
+        const ads = Array.isArray(res.data) ? res.data : [];
         const activeAds = ads.filter((ad) => ad.isActive === true);
 
         if (activeAds.length > 0) {
