@@ -1,20 +1,26 @@
-# 🚀 BillPlease POS – SaaS Platform
+# 🚀 Herencia Hispania – Language Institute Website
+
+🌍 Real-world client project with production deployment
+
+⭐ Developed and delivered a production-ready website for a Spanish language institute
+
+---
 
 ## 🔗 Live Demo
 
-👉https://bills-eight-eta.vercel.app/
+👉 https://www.xn--herenciahispaa-2nb.com/
 
 ---
 
 ## 🧠 Problem
 
-Small restaurants and retail stores often rely on manual billing and disconnected systems, leading to inefficiency, human errors, and poor customer experience.
+The client needed a modern, responsive, and SEO-friendly website to represent their Spanish language institute online, attract students, and clearly communicate course offerings.
 
 ---
 
 ## 💡 Solution
 
-BillPlease is a modern SaaS-based Point-of-Sale (POS) platform that streamlines billing, order management, and daily operations through a fast, responsive, and user-friendly dashboard.
+Built a clean, user-friendly website with a strong focus on UI/UX, performance, and accessibility. The platform allows users to explore courses, understand offerings, and easily connect with the institute.
 
 ---
 
@@ -22,66 +28,70 @@ BillPlease is a modern SaaS-based Point-of-Sale (POS) platform that streamlines 
 
 * Next.js
 * React.js
-* Material UI
-* MongoDB
-* REST APIs
-* PWA (Progressive Web App)
+* MUI
+* JavaScript
+* REST API Integration
 
 ---
 
 ## ✨ Key Features
 
-* 🧾 Smart Billing System
-* 📦 Order & Inventory Management
-* 📊 Admin Dashboard
-* 📱 Mobile-friendly (PWA enabled)
-* 🔐 Authentication System
+* 📱 Fully Responsive Design 
+* ⚡ Fast Loading & Optimized Performance
+* 🔍 SEO-Friendly Structure
+* 🧭 Intuitive Navigation & User Flow
+* 📩 Contact & Inquiry Integration
 
 ---
 
 ## 📸 Screenshots
 
-### Dashboard
+### Homepage
 
-<img width="1901" height="867" alt="Admin-Qr3TnwcF" src="https://github.com/user-attachments/assets/5e2fcb81-f6f3-4d8f-bf68-ae41f1c58170" />
+<img width="1900" height="868" alt="image" src="https://github.com/user-attachments/assets/d68f3fa9-e065-4f08-92d5-a2e88878b58f" />
 
 
-### Billing Screen
+### Why Spanish Page
 
-<img width="1918" height="866" alt="Service-Bg6fGhE5" src="https://github.com/user-attachments/assets/e1516f71-f13f-46cb-a800-51458cc8103c" />
+<img width="1901" height="869" alt="image" src="https://github.com/user-attachments/assets/7c173891-8dd1-4fb0-b695-774b321a0a98" />
+
+### Freebies Page
+
+<img width="1899" height="868" alt="image" src="https://github.com/user-attachments/assets/034a6a97-bc29-4eeb-ba66-927d83233743" />
+
 
 
 ---
 
 ## 📈 Impact
-Built and launched as a real SaaS product
-Secured initial user adoption and validated product-market fit
-Improved operational efficiency for target users
-Designed for scalability, performance, and usability
-Led go-to-market strategy including branding and positioning
+
+* Delivered a production-ready website for real client usage
+* Improved online presence and user engagement
+* Optimized UI for better conversion and accessibility
+* Strengthened brand identity through modern design
 
 ---
 
 ## 🧑‍💻 My Role
-Full Product Development (UI/UX + Frontend)
-System Architecture & Feature Design
-Performance Optimization & PWA Implementation
-Branding, Landing Page & Marketing Strategy
-Product Positioning and User Experience Optimization
+
+* Frontend Development (React.js / Next.js)
+* UI/UX Design & Implementation
+* Client Communication & Requirement Gathering
+* Performance Optimization & SEO Improvements
 
 ---
 
 ## 🔒 Note
 
-Some backend logic and configurations are simplified in this public version for security reasons.
+This project was developed for a client. Some implementation details and backend integrations are not included in this repository due to confidentiality.
 
 ---
 
 ## 🚀 Run Locally
 
 ```bash
-git clone https://github.com/parthj712/billplease
-cd billplease
+git clone https://github.com/parthj712/Herencia-Hispa-a
+cd Herencia-Hispa-a
 npm install
 npm run dev
 ```
